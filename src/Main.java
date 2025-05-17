@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Main {
     public static void solution() throws IOException {
@@ -9,7 +9,7 @@ public class Main {
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
 
-        bw.write(String.valueOf(a + b));
+        bw.write(String.valueOf(a * b));
         bw.flush();
         bw.close();
         br.close();
