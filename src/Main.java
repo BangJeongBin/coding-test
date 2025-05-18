@@ -9,7 +9,7 @@ public class Main {
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
 
-        bw.write(String.valueOf(a * b));
+        bw.write(String.valueOf((double) a / b));
         bw.flush();
         bw.close();
         br.close();
