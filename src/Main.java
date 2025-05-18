@@ -1,18 +1,11 @@
 import java.io.*;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
 public class Main {
     public static void solution() throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        // Calendar 객체 생성
-        Calendar cal = Calendar.getInstance();
-
-        // 날짜 포맷 지정
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-
-        bw.write(String.valueOf(df.format(cal.getTime())));
+        bw.write(String.valueOf("6\n"));
+        bw.write(String.valueOf("bangjungbin"));
         bw.flush();
         bw.close();
     }
