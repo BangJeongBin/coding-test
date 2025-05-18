@@ -1,18 +1,20 @@
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main {
     public static void solution() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        int a = Integer.parseInt(st.nextToken());
-        int b = Integer.parseInt(st.nextToken());
 
-        bw.write(String.valueOf((double) a / b));
+        // Calendar 객체 생성
+        Calendar cal = Calendar.getInstance();
+
+        // 날짜 포맷 지정
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+
+        bw.write(String.valueOf(df.format(cal.getTime())));
         bw.flush();
         bw.close();
-        br.close();
     }
 
     public static void main(String[] args) throws IOException {
