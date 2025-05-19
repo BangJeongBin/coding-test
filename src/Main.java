@@ -4,8 +4,18 @@ public class Main {
     public static void solution() throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        bw.write(String.valueOf("6\n"));
-        bw.write(String.valueOf("bangjungbin"));
+        bw.write("\\    /\\");
+        bw.newLine(); // 줄 바꿈
+
+        bw.write(" )  ( ')");
+        bw.newLine(); // 줄 바꿈
+
+        bw.write("(  /  )");
+        bw.newLine(); // 줄 바꿈
+
+        bw.write(" \\(__)|");
+        bw.newLine(); // 줄 바꿈
+
         bw.flush();
         bw.close();
     }
