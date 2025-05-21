@@ -1,27 +1,30 @@
 import java.io.*;
+import java.util.*;
 
 public class Main {
     public static void solution() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        bw.write("         ,r'\"7");
-        bw.newLine(); // 줄 바꿈
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        bw.write("r`-_   ,'  ,/");
-        bw.newLine(); // 줄 바꿈
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
 
-        bw.write(" \\. \". L_r'");
-        bw.newLine(); // 줄 바꿈
+        bw.write(String.valueOf(a + b));
+        bw.newLine();
 
-        bw.write("   `~\\/");
-        bw.newLine(); // 줄 바꿈
+        bw.write(String.valueOf(a - b));
+        bw.newLine();
 
-        bw.write("      |");
-        bw.newLine(); // 줄 바꿈
+        bw.write(String.valueOf(a * b));
+        bw.newLine();
 
-        bw.write("      |");
-        bw.newLine(); // 줄 바꿈
+        bw.write(String.valueOf(a / b));
+        bw.newLine();
 
+        bw.write(String.valueOf(a % b));
+        bw.newLine();
 
         bw.flush();
         bw.close();
