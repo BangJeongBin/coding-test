@@ -8,15 +8,18 @@ public class Main {
 
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int a = Integer.parseInt(st.nextToken());
-        int b = Integer.parseInt(st.nextToken());
+        int point = Integer.parseInt(st.nextToken());
 
-        if (a > b) {
-            bw.write(">");
-        } else if (a < b) {
-            bw.write("<");
+        if (90 <= point) {
+            bw.write("A");
+        } else if (80 <= point) {
+            bw.write("B");
+        } else if (70 <= point) {
+            bw.write("C");
+        } else if (60 <= point) {
+            bw.write("D");
         } else {
-            bw.write("==");
+            bw.write("F");
         }
 
         bw.flush();
