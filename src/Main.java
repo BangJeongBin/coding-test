@@ -1,22 +1,16 @@
 import java.io.*;
-import java.util.*;
 
 public class Main {
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        while (true) {
-            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
+        int dan = Integer.parseInt(br.readLine());
 
-            if (a == 0 && b == 0) {
-                break;
-            }
-            bw.write(String.valueOf(a + b) + "\n");
+        for (int i = 1; i < 10; i++) {
+             bw.write(String.valueOf(dan + " * " + i + " = " + (dan * i) ) + "\n");
         }
-
+        
         bw.flush();
         bw.close();
         br.close();
