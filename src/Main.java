@@ -1,21 +1,22 @@
 import java.io.*;
+import java.util.*;
 
 public class Main {
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
+        StringTokenizer st;
+        String str;
 
-        int star = Integer.parseInt(br.readLine());
+        while ((str = br.readLine()) != null) {
+            st = new StringTokenizer(str, " ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
 
-        for (int i = 1; i <= star; i++) {
-            for (int j = 0; j < i; j++) {
-                 bw.write("*");
-            }
-            bw.newLine();
+            sb.append(a + b).append("\n");
         }
-        
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
+
         br.close();
     }
 
