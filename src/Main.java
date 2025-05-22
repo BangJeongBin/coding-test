@@ -5,10 +5,13 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int dan = Integer.parseInt(br.readLine());
+        int star = Integer.parseInt(br.readLine());
 
-        for (int i = 1; i < 10; i++) {
-             bw.write(String.valueOf(dan + " * " + i + " = " + (dan * i) ) + "\n");
+        for (int i = 1; i <= star; i++) {
+            for (int j = 0; j < i; j++) {
+                 bw.write("*");
+            }
+            bw.newLine();
         }
         
         bw.flush();
