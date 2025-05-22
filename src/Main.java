@@ -1,17 +1,17 @@
 import java.io.*;
-import java.util.StringTokenizer;
 
 public class Main {
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        
+        int num =  Integer.parseInt(br.readLine());
+        int factorial = 1; // 곱셈이기 때문에 초기값이 0이 아닌 1으로 초기화 해야 함.
 
-        StringTokenizer st = new StringTokenizer(br.readLine() , " ");
-
-        Long a = Long.parseLong(st.nextToken());
-        Long b = Long.parseLong(st.nextToken());
-
-        bw.write(String.valueOf(Math.abs(a - b)));
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+        bw.write(String.valueOf(factorial));
 
         bw.flush();
         bw.close();
