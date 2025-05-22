@@ -6,9 +6,18 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        String name = br.readLine();
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        bw.write(name + "??!");
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+
+        if (a > b) {
+            bw.write(">");
+        } else if (a < b) {
+            bw.write("<");
+        } else {
+            bw.write("==");
+        }
 
         bw.flush();
         bw.close();
