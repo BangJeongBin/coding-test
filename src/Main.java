@@ -1,22 +1,17 @@
 import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int x = Integer.parseInt(br.readLine());
-        int y = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine() , " ");
 
-        if (x > 0 && y > 0) {
-            bw.write("1");
-        } else if (x < 0 && y > 0) {
-            bw.write("2");
-        } else if (x < 0 && y < 0) {
-            bw.write("3");
-        } else {
-            bw.write("4");
-        }
+        Long a = Long.parseLong(st.nextToken());
+        Long b = Long.parseLong(st.nextToken());
+
+        bw.write(String.valueOf(Math.abs(a - b)));
 
         bw.flush();
         bw.close();
