@@ -5,12 +5,17 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int year = Integer.parseInt(br.readLine());
+        int x = Integer.parseInt(br.readLine());
+        int y = Integer.parseInt(br.readLine());
 
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        if (x > 0 && y > 0) {
             bw.write("1");
+        } else if (x < 0 && y > 0) {
+            bw.write("2");
+        } else if (x < 0 && y < 0) {
+            bw.write("3");
         } else {
-            bw.write("0");
+            bw.write("4");
         }
 
         bw.flush();
