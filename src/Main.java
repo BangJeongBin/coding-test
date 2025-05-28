@@ -1,24 +1,30 @@
 import java.io.*;
+import java.util.*;
 
 public class Main {
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
+        Map<String, Double> grade = new HashMap<>();
+        grade.put("A+", 4.3);
+        grade.put("A0", 4.0);
+        grade.put("A-", 3.7);
+        grade.put("B+", 3.3);
+        grade.put("B0", 3.0);
+        grade.put("B-", 2.7);
+        grade.put("C+", 2.3);
+        grade.put("C0", 2.0);
+        grade.put("C-", 1.7);
+        grade.put("D+", 1.3);
+        grade.put("D0", 1.0);
+        grade.put("D-", 0.7);
+        grade.put("F", 0.0);
+
         String alphabet = br.readLine();
-        String answer = "";
+        double answer = grade.get(alphabet);
 
-        for (int i = 0; i < alphabet.length(); i++) {
-            char spell = alphabet.charAt(i);
-
-            if (Character.isUpperCase(spell)) {
-                answer += Character.toLowerCase(spell);
-            } else {
-                answer += Character.toUpperCase(spell);
-            }
-        }
-
-        bw.write(answer);
+        bw.write(String.valueOf(answer));
 
         bw.flush();
         bw.close();
