@@ -1,5 +1,4 @@
 import java.io.*;
-import java.math.BigInteger;
 
 public class Main {
 
@@ -7,11 +6,20 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        BigInteger a = new BigInteger(br.readLine()); // "10진수로 1,000자리를 넘지 않으며 양수와 음수가 모두 주어질 수 있다." 가 문제의 조건이므로
-        BigInteger b = new BigInteger(br.readLine()); // 일반적인 Long이 아닌 math 클래스를 사용한다.
-        bw.write(String.valueOf(a.add(b)) + "\n");
-        bw.write(String.valueOf(a.subtract(b)) + "\n");
-        bw.write(String.valueOf(a.multiply(b)) + "\n");
+        int n = Integer.parseInt(br.readLine());
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                int a = n - i;
+
+                if (a < j) {
+                    bw.write("*");
+                } else {
+                    bw.write(" ");
+                }
+            }
+            bw.write("\n");
+        }
 
         bw.flush();
         bw.close();
