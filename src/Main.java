@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class Main {
 
@@ -7,27 +6,17 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        while (true) {
-            StringTokenizer st = new StringTokenizer(br.readLine()," ");
+        int n = Integer.parseInt(br.readLine());
+        String s = br.readLine();
+        int answer = 0;
 
-            int x = Integer.parseInt(st.nextToken());
-            int y = Integer.parseInt(st.nextToken());
-            int z = Integer.parseInt(st.nextToken());
-
-
-            // 0 0 0 을 입력받으면 종료
-            if (x == 0 && y == 0 && z == 0) break;
-
-            if ((x * x + y * y) == z * z) {
-                System.out.println("right");
-            } else if (x * x == (y * y + z * z)) {
-                System.out.println("right");
-            } else if (y * y == (z * z + x * x)) {
-                System.out.println("right");
-            } else {
-                System.out.println("wrong");
-            }
+        for (int i = 0; i < n; i++) {
+             //answer += Character.getNumericValue(s.charAt(i)); // char형(ascii)을 int형으로 바꿔주는 정적메서드
+             answer += s.charAt(i) - '0'; // 이 방법이 범용적으로 많이 쓰임. 안정성은 위에 코드가 더 좋음
         }
+
+        bw.write(String.valueOf(answer));
+
         bw.flush();
         bw.close();
         br.close();
