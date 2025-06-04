@@ -6,14 +6,23 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        String a = br.readLine();
-        String b = br.readLine();
-        String c = br.readLine();
+        int[] n = new int[9];
+        int answer = 0; // 가장 큰 수를 담는 변수
+        int count = 0; // 가장 큰 수의 index + 1를 담는 변수
 
-        bw.write(String.valueOf(Integer.parseInt(a) + Integer.parseInt(b) - Integer.parseInt(c)));
-        bw.write("\n");
-        String s = a + b;
-        bw.write(String.valueOf(Integer.parseInt(s) - Integer.parseInt(c)));
+        for (int i = 0; i < n.length; i++) {
+            n[i] = Integer.parseInt(br.readLine());
+        }
+
+        for (int i = 0; i < n.length; i++) {
+            if (answer < n[i]) {
+                answer = n[i];
+                count = i + 1;
+            }
+
+        }
+        bw.write(answer + "\n");
+        bw.write(count + "\n");
 
         bw.flush();
         bw.close();
