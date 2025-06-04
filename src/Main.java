@@ -1,28 +1,21 @@
 import java.io.*;
+import java.util.*;
 
 public class Main {
 
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int[] n = new int[9];
-        int answer = 0; // 가장 큰 수를 담는 변수
-        int count = 0; // 가장 큰 수의 index + 1를 담는 변수
+        int n = 0;
 
-        for (int i = 0; i < n.length; i++) {
-            n[i] = Integer.parseInt(br.readLine());
+        while (st.hasMoreTokens()) {
+            n++;
+            String s = st.nextToken(); // nextToken() 메서드를 호춣하지 않으면 입력이 종료되지 않음
         }
 
-        for (int i = 0; i < n.length; i++) {
-            if (answer < n[i]) {
-                answer = n[i];
-                count = i + 1;
-            }
-
-        }
-        bw.write(answer + "\n");
-        bw.write(count + "\n");
+        bw.write(String.valueOf(n));
 
         bw.flush();
         bw.close();
