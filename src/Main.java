@@ -6,27 +6,27 @@ public class Main {
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int n = Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine());
-        String multiply = (String.valueOf(n)); // 인덱스 추출을 위해 casting
-
-        int[] count = new int[10];
-
-        int count0 = 0, count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0, count6 = 0, count7 = 0, count8 = 0, count9 = 0;
-
-        char[] arr = multiply.toCharArray();
+        int[] arr = new int[8];
+        String str = "";
 
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < count.length; j++) {
-                if ((arr[i] - '0') == j) { // char형을 int로 바꾸기 위해 "- '0'" 사용
-                    count[j]++;
-                }
-            }
-        }
-        for (int i = 0; i < count.length; i++) {
-            bw.write(count[i] + "\n");
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
+        for (int i = 0; i < arr.length; i++) { // ascending, mix 여부를 구하는 연산자
+            if (arr[i] == i + 1) {
+                str = "ascending";
+            } else {
+                str = "mixed";
+                break;
+            }
+        }
+        if (arr[0] == 8 && arr[1] == 7 && arr[2] == 6 && arr[3] == 5 && arr[4] == 4 && arr[5] == 3 && arr[6] == 2) { // descending 여부를 구하는 연산자
+            str = "descending";
+        }
+        bw.write(str);
 
         bw.flush();
         bw.close();
