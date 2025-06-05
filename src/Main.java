@@ -6,16 +6,24 @@ public class Main {
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int n = Integer.parseInt(br.readLine()); // 정수의 개수
+        int maxNum = -1000000;
+        int minNum = 1000000;
+
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-
-        int n = 0;
-
         while (st.hasMoreTokens()) {
-            n++;
-            String s = st.nextToken(); // nextToken() 메서드를 호춣하지 않으면 입력이 종료되지 않음
+            int s = Integer.parseInt(st.nextToken());
+
+            if (s > maxNum) {
+                maxNum = s;
+            }
+            if (s < minNum) {
+                minNum = s;
+            }
         }
 
-        bw.write(String.valueOf(n));
+        bw.write(String.valueOf(minNum + " " + maxNum));
 
         bw.flush();
         bw.close();
