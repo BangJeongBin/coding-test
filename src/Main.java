@@ -6,27 +6,22 @@ public class Main {
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int[] arr = new int[8];
-        String str = "";
+        int t = Integer.parseInt(br.readLine()); // 테스트 케이스 개수
 
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
+        for (int i = 0; i < t; i++) { // t 만큼 반복
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            int r = Integer.parseInt(st.nextToken()); // 문자 반복횟수
+            char[] str = st.nextToken().toCharArray(); // 입력받은 문자열 -> char 배열 화
 
-        for (int i = 0; i < arr.length; i++) { // ascending, mix 여부를 구하는 연산자
-            if (arr[i] == i + 1) {
-                str = "ascending";
-            } else {
-                str = "mixed";
-                break;
+            String answer = "";
+            for (int j = 0; j < str.length; j++) {
+                for (int k = 0; k < r; k++) { // r만큼 반복
+                    answer += str[j];
+                }
             }
+            bw.write(answer + "\n");
         }
-        if (arr[0] == 8 && arr[1] == 7 && arr[2] == 6 && arr[3] == 5 && arr[4] == 4 && arr[5] == 3 && arr[6] == 2) { // descending 여부를 구하는 연산자
-            str = "descending";
-        }
-        bw.write(str);
 
         bw.flush();
         bw.close();
