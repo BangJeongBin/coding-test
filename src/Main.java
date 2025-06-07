@@ -7,21 +7,24 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int t = Integer.parseInt(br.readLine()); // 테스트 케이스 개수
+        char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        String s = br.readLine();
 
-        for (int i = 0; i < t; i++) { // t 만큼 반복
-            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-            int r = Integer.parseInt(st.nextToken()); // 문자 반복횟수
-            char[] str = st.nextToken().toCharArray(); // 입력받은 문자열 -> char 배열 화
+        char[] str = s.toCharArray();
 
-            String answer = "";
+        for (int i = 0; i < alphabet.length; i++) {
+            int answer = 0;
             for (int j = 0; j < str.length; j++) {
-                for (int k = 0; k < r; k++) { // r만큼 반복
-                    answer += str[j];
+                if (str[j] == alphabet[i]) {
+                    answer = j;
+                    break;
+                } else {
+                    answer = -1;
                 }
             }
-            bw.write(answer + "\n");
+            bw.write(String.valueOf(answer + " "));
         }
+
 
         bw.flush();
         bw.close();
