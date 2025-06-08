@@ -7,24 +7,24 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-        String s = br.readLine();
+        int n = Integer.parseInt(br.readLine());
+        while (n-- > 0) {
+            String str = br.readLine();
+            char[] strs = str.toCharArray(); // 입력받은 문자열 char 배열 화
 
-        char[] str = s.toCharArray();
-
-        for (int i = 0; i < alphabet.length; i++) {
             int answer = 0;
-            for (int j = 0; j < str.length; j++) {
-                if (str[j] == alphabet[i]) {
-                    answer = j;
-                    break;
-                } else {
-                    answer = -1;
+            int c = 0;
+
+            for (int i = 0; i < strs.length; i++) {
+                if (strs[i] == 'O') {
+                    answer += ++c;
+                } else { // strs[i] == 'X'인 경우
+                    c = 0;
+                    answer += c;
                 }
             }
-            bw.write(String.valueOf(answer + " "));
+            bw.write(answer + "\n");
         }
-
 
         bw.flush();
         bw.close();
