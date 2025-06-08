@@ -6,29 +6,34 @@ public class Main {
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int n = Integer.parseInt(br.readLine());
-        while (n-- > 0) {
-            String str = br.readLine();
-            char[] strs = str.toCharArray(); // 입력받은 문자열 char 배열 화
+        int h = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
-            int answer = 0;
-            int c = 0;
+        String answer = pushed45minutes(h, m); // 45분을 앞당기는 메서드 호출
 
-            for (int i = 0; i < strs.length; i++) {
-                if (strs[i] == 'O') {
-                    answer += ++c;
-                } else { // strs[i] == 'X'인 경우
-                    c = 0;
-                    answer += c;
-                }
-            }
-            bw.write(answer + "\n");
-        }
+        bw.write(answer);
 
         bw.flush();
         bw.close();
         br.close();
+    }
+
+    public static String pushed45minutes(int h, int m) {
+        m -= 45;
+
+        if (m < 0) { // m - 45가 음수가 나올 경우
+            m = 60 + m;
+            if (h == 0) { // h가 24시 인 경우
+                h = 23;
+            } else { // 아닌경우 -1
+                h--;
+            }
+        }
+        String answer = h + " " + m;
+
+        return answer;
     }
 
 
