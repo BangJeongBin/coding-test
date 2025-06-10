@@ -6,34 +6,27 @@ public class Main {
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int h = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        int[] n = new int[10];
+        HashMap<Integer, Integer> map = new HashMap<>();
 
-        String answer = pushed45minutes(h, m); // 45분을 앞당기는 메서드 호출
+        for (int i = 0; i < n.length; i++) { // 10개의 정수의 값을 받는 배열
+            n[i] = Integer.parseInt(br.readLine());
+        }
 
-        bw.write(answer);
+        for (int i = 0; i < n.length; i++) {
+            int a = n[i] % 42;
+
+            if (!map.containsValue(a)) { // 중복 value 존재 여부 반환
+                map.put(i, a);
+            }
+        }
+
+        bw.write(String.valueOf(map.size()));
 
         bw.flush();
         bw.close();
         br.close();
-    }
-
-    public static String pushed45minutes(int h, int m) {
-        m -= 45;
-
-        if (m < 0) { // m - 45가 음수가 나올 경우
-            m = 60 + m;
-            if (h == 0) { // h가 24시 인 경우
-                h = 23;
-            } else { // 아닌경우 -1
-                h--;
-            }
-        }
-        String answer = h + " " + m;
-
-        return answer;
     }
 
 
