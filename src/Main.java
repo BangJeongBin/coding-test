@@ -7,28 +7,33 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int t = Integer.parseInt(br.readLine()); // 테스트 케이스 횟수
+        int n = Integer.parseInt(br.readLine()); // 참가자의 수
 
-        while (t-- > 0) {
-            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-            int h = Integer.parseInt(st.nextToken()); // 층
-            int w = Integer.parseInt(st.nextToken()); // 호실
-            int n = Integer.parseInt(st.nextToken()); // n번째 손님
+        int[] sizes = new int[6];
+        StringTokenizer st1 = new StringTokenizer(br.readLine(), " "); // 사이즈별 신청자 수
 
-            HashMap<Integer, Integer> map = new HashMap<>();
-            int p = 1; // key 입력용
-
-            for (int i = 1; i <= w; i++) { // 호실
-                for (int j = 1; j <= h; j++) { // 층
-                    if (i < 10) {
-                        map.put(p++, Integer.parseInt(j + "0" + i)); // 호실을 2자릿수로 표현하기 위한 조건식
-                    } else {
-                        map.put(p++, Integer.parseInt(j + "" + i));
-                    }
-                }
-            }
-            bw.write(String.valueOf(map.get(n)) + "\n");
+        for (int i = 0; i < sizes.length; i++) {
+            sizes[i] = Integer.parseInt(st1.nextToken());
         }
+
+        StringTokenizer st2 = new StringTokenizer(br.readLine(), " ");
+        int t = Integer.parseInt(st2.nextToken()); // 티셔츠 묶음 수
+        int p = Integer.parseInt(st2.nextToken()); // 펜 묶음 수
+
+        int answer1 = 0;
+        for (int i = 0; i < sizes.length; i++) {
+            answer1 += (int)Math.ceil((double)sizes[i] / t); // Math 클래스의 ceil 메서드를 사용하여 올림을 함
+            // 반드시 ceil 메서드를 사용하는 경우 아큐먼트로 double를 보내주어야 한다.
+            // 참조 : https://luanaeun.tistory.com/208
+
+//            bw.write(i + "번째 계산 : " + answer1 + "\n");
+        }
+
+        int answer2 = n / p;
+        int answer3 = n % p;
+
+        bw.write(answer1 + "\n");
+        bw.write(answer2 + " " + answer3);
 
         bw.flush();
         bw.close();
