@@ -1,49 +1,33 @@
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://st-lab.tistory.com/98
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/3400-3499/3423.Maximum%20Difference%20Between%20Adjacent%20Elements%20in%20a%20Circular%20Array/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
-        int[] arr = new int[10];
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        for (int i = 0; i < arr.length; i++) {
-            int i1 = arr[i];
-            
+        // Testcase
+        int[] nums = {1,2,4};
+
+        //--------------------------------------------------------------------------------------------------------------
+
+        int n = nums.length;
+        int result = Math.abs(nums[0] - nums[n - 1]);
+        for (int i = 1; i < n; ++i) {
+            result = Math.max(result, Math.abs(nums[i] - nums[i - 1]));
         }
 
-        // 자릿수의 길이를 알기위해 일단 문자열로 입력받는다.
-        String str_N = br.readLine();
+        //return result;
 
-        // 해당 문자열의 길이 변수
-        int N_len = str_N.length();
+        //--------------------------------------------------------------------------------------------------------------
 
-        // 문자열을 정수(int)로 변환
-        int N = Integer.parseInt(str_N);
-        int result = 0;
+        bw.write(result + "\n");
 
-
-        // i 는 가능한 최솟값인 N - 9 * N의 각 자릿수부터 시작
-        for(int i = (N - (N_len * 9)); i < N; i++) {
-            int number = i;
-            int sum = 0;	// 각 자릿수 합 변수
-
-            while(number != 0) {
-                sum += number % 10;	// 각 자릿수 더하기
-                number /= 10;
-            }
-
-            // i 값과 각 자릿수 누적합이 같을 경우 (생성자를 찾았을 경우)
-            if(sum + i == N) {
-                result = i;
-                break;
-            }
-
-        }
-
-        System.out.println(result);
+        bw.flush();
+        bw.close();
+        br.close();
     }
 
 
