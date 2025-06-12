@@ -1,5 +1,6 @@
+package leetcode;
+
 import java.io.*;
-import java.util.*;
 
 // 참조 : https://github.com/doocs/leetcode/blob/main/solution/3400-3499/3423.Maximum%20Difference%20Between%20Adjacent%20Elements%20in%20a%20Circular%20Array/Solution.java
 public class Main {
