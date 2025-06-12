@@ -1,40 +1,50 @@
 import java.io.*;
 import java.util.*;
 
+// 참조 : https://st-lab.tistory.com/98
 public class Main {
 
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        
+        int[] arr = new int[10];
 
-        br.readLine();	// N 은 쓰지 않음.
-        int count = 0;
-
-        StringTokenizer st = new StringTokenizer(br.readLine()," ");
-
-        while(st.hasMoreTokens()) {
-
-            // 소수인경우 true, 아닌경우 false
-            boolean isPrime = true;
-
-            int num = Integer.parseInt(st.nextToken());
-
-            if(num == 1) {
-                continue;
-            }
-            for(int i = 2; i <= Math.sqrt(num); i++) { // 제곱근을 이용한 방법
-                if(num % i == 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-            if(isPrime) {
-                count++;
-            }
+        for (int i = 0; i < arr.length; i++) {
+            int i1 = arr[i];
+            
         }
-        System.out.println(count);
+
+        // 자릿수의 길이를 알기위해 일단 문자열로 입력받는다.
+        String str_N = br.readLine();
+
+        // 해당 문자열의 길이 변수
+        int N_len = str_N.length();
+
+        // 문자열을 정수(int)로 변환
+        int N = Integer.parseInt(str_N);
+        int result = 0;
+
+
+        // i 는 가능한 최솟값인 N - 9 * N의 각 자릿수부터 시작
+        for(int i = (N - (N_len * 9)); i < N; i++) {
+            int number = i;
+            int sum = 0;	// 각 자릿수 합 변수
+
+            while(number != 0) {
+                sum += number % 10;	// 각 자릿수 더하기
+                number /= 10;
+            }
+
+            // i 값과 각 자릿수 누적합이 같을 경우 (생성자를 찾았을 경우)
+            if(sum + i == N) {
+                result = i;
+                break;
+            }
+
+        }
+
+        System.out.println(result);
     }
-    // 참조 : https://st-lab.tistory.com/80
 
 
     public static void main(String[] args) throws IOException {
