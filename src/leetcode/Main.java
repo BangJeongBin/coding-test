@@ -2,7 +2,6 @@ package leetcode;
 
 import java.io.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/3400-3499/3423.Maximum%20Difference%20Between%20Adjacent%20Elements%20in%20a%20Circular%20Array/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
@@ -10,21 +9,31 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int[] nums = {1,2,4};
+        int[] nums = {3,2,4};
+        int target = 6;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int n = nums.length;
-        int result = Math.abs(nums[0] - nums[n - 1]);
-        for (int i = 1; i < n; ++i) {
-            result = Math.max(result, Math.abs(nums[i] - nums[i - 1]));
-        }
+        int[] result = new int[2];
+        int numsLength = nums.length;
 
+        for (int i = 0; i < numsLength; i++) {
+            for (int j = i + 1; j < numsLength; j++) {
+                if ((nums[i] + nums[j]) == target) {
+                    result[0] = i;
+                    result[1] = j;
+
+                    //return result;
+                }
+            }
+        }
         //return result;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        bw.write(result + "\n");
+        for (int i = 0; i < result.length; i++) {
+            bw.write(result[i] + "\n");
+        }
 
         bw.flush();
         bw.close();
