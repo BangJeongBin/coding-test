@@ -9,31 +9,45 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int[] nums = {3,2,4};
-        int target = 6;
+        int x = 121;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int[] result = new int[2];
-        int numsLength = nums.length;
+        if (x <= 0) { // 음수인 경우 false return
+            //return false;
+        } else if (x == 0) { // 0인 경우 ture return
+            //return true;
+        } else if ((x % 10) == x) { // 1자리 수 인 경우 true return
+            //return true;
+        }
 
-        for (int i = 0; i < numsLength; i++) {
-            for (int j = i + 1; j < numsLength; j++) {
-                if ((nums[i] + nums[j]) == target) {
-                    result[0] = i;
-                    result[1] = j;
+        // 문자열로 변환 후 대조
+        String str = "" + x;
+        char[] strs = str.toCharArray();
 
-                    //return result;
+        int result = 0;
+        int len = (int)Math.ceil((double)strs.length / 2); // result 값과 비교하여 true 반환
+
+        for (int i = 0; i < len; i++) {
+            for (int j = ((strs.length - 1) - i); j > 0; j--) {
+                if (strs[i] == strs[j]) {
+                    //bw.write(String.valueOf("strs[i] : " + strs[i] + " strs[j] : " + strs[j] + "\n"));
+                    result++;
+                    break;
+                }  else {
+                    //return false;
                 }
             }
         }
-        //return result;
+
+        if (result == len) { // 앞에 수와 뒤에수가 같은 경우 result++ == 길이의 / 2 가 같은 경우 palindrome 검사 통과
+            //return true;
+        }
+        //return false;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        for (int i = 0; i < result.length; i++) {
-            bw.write(result[i] + "\n");
-        }
+        bw.write(String.valueOf("result : " + result + ", len : " + len));
 
         bw.flush();
         bw.close();
