@@ -9,45 +9,69 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int x = 121;
+        String s = "MCMXCIV";
 
         //--------------------------------------------------------------------------------------------------------------
-
-        if (x <= 0) { // 음수인 경우 false return
-            //return false;
-        } else if (x == 0) { // 0인 경우 ture return
-            //return true;
-        } else if ((x % 10) == x) { // 1자리 수 인 경우 true return
-            //return true;
-        }
-
-        // 문자열로 변환 후 대조
-        String str = "" + x;
-        char[] strs = str.toCharArray();
 
         int result = 0;
-        int len = (int)Math.ceil((double)strs.length / 2); // result 값과 비교하여 true 반환
+        char[] str = s.toCharArray();
 
-        for (int i = 0; i < len; i++) {
-            for (int j = ((strs.length - 1) - i); j > 0; j--) {
-                if (strs[i] == strs[j]) {
-                    //bw.write(String.valueOf("strs[i] : " + strs[i] + " strs[j] : " + strs[j] + "\n"));
-                    result++;
+        for (char c : str) {
+            switch (c) {
+                case 'I':
+                    result += 1;
                     break;
-                }  else {
-                    //return false;
-                }
+                case 'V':
+                    result += 5;
+                    break;
+                case 'X':
+                    result += 10;
+                    break;
+                case 'L':
+                    result += 50;
+                    break;
+                case 'C':
+                    result += 100;
+                    break;
+                case 'D':
+                    result += 500;
+                    break;
+                case 'M':
+                    result += 1000;
+                    break;
             }
         }
+        //bw.write("for문 나온 후 : " + result + "\n");
 
-        if (result == len) { // 앞에 수와 뒤에수가 같은 경우 result++ == 길이의 / 2 가 같은 경우 palindrome 검사 통과
-            //return true;
+        if (s.contains("IV")) {
+            result -= 6;
+            result += 4;
         }
-        //return false;
+        if (s.contains("IX")) {
+            result -= 11;
+            result += 9;
+        }
+        if (s.contains("XL")) {
+            result -= 60;
+            result += 40;
+        }
+        if (s.contains("XC")) {
+            result -= 110;
+            result += 90;
+        }
+        if (s.contains("CD")) {
+            result -= 600;
+            result += 400;
+        }
+        if (s.contains("CM")) {
+            result -= 1100;
+            result += 900;
+        }
+        //bw.write("if문 나온 후 : " + result);
+        //return result;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        bw.write(String.valueOf("result : " + result + ", len : " + len));
 
         bw.flush();
         bw.close();
