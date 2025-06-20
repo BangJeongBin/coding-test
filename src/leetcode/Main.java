@@ -11,31 +11,33 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int[] nums = {1,1,2};
+        int[] nums = {0,1,2,2,3,0,4,2};
+        int val = 2;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        // 중복을 제거하기 위해 HashSet 자료형을 사용합니다.
-        Set<Integer> set = new HashSet<>();
+        List<Integer> list = new ArrayList<>();
 
-        // for문을 돌면서 nums 배열의 요소를 하나씩 set에 저장합니다.
-        for(int num: nums){
-            set.add(num);
+        for (int num : nums) {
+            list.add(num);
         }
 
-        // 중복 숫자가 제거된 set으로 ArrayList를 만듭니다.
-        List<Integer> answerList = new ArrayList<>(set);
-
-        // ArrayList를 정렬합니다.
-        Collections.sort(answerList);
-
-        // ArrayList의 내용을 다시 nums 배열에 넣습니다.
-        for(int i=0;i<answerList.size();i++){
-            nums[i]=answerList.get(i);
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) == val) {
+                list.remove(i);
+                i--; // list.remove()는 삭제되면 index가 하나 밀려나 건너 뛰어지게 된다. 이 방법 아니면 뒤에서 부터 시작하는 방법도 있다.
+            }
         }
 
-        // 중복이 제거된 set의 사이즈를 반환합니다.
-        //return set.size();
+        for (int i = 0; i < list.size(); i++) {
+            nums[i] = list.get(i);
+        }
+
+        //return list.size();
+        bw.write(String.valueOf(list.size()) + "\n");
+        for (int num : list) {
+            bw.write("num : " + num + "\n");
+        }
 
         //--------------------------------------------------------------------------------------------------------------
 
