@@ -3,7 +3,6 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0035.Search%20Insert%20Position/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
@@ -11,24 +10,45 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int[] nums = {1,3,5};
-        int target = 4;
+        String s = "   fly me   to   the moon  ";
 
         //--------------------------------------------------------------------------------------------------------------
+        // Solution 1
 
-        int result = 0;
-        int numsLength = nums.length;
+//        char[] strs = s.toCharArray();
+//        List<String> list = new ArrayList<>();
+//        String result = "";
+//
+//        for (int j = 0; j < strs.length; j++) {
+//            if (strs[j] != ' ') {
+//                result += strs[j];
+//                bw.write(result + "\n");
+//            } else if (strs[j] == ' ' && !result.equals("")) { // str의 끝이 공백으로 끝나는 경우 list의 공백이 삽입되는 것을 방지
+//                list.add(result);
+//                result = "";
+//            }
+//        }
+//
+//        if (result.equals("")) {
+//            bw.write("1 - " + list.get(list.size() - 1).length());
+//            //return (list.get(list.size() - 1)).length();
+//        } else {
+//            bw.write("2 - " + result.length());
+//            //return result.length();
+//        }
 
-        while (result < numsLength) {
-            int mid = (result + numsLength) >>> 1; // 안전한 중간 값 연산을 위해 비트연산을 사용
-            if (nums[mid] >= target) {
-                numsLength = mid;
-            } else {
-                result = mid + 1;
-            }
+        //--------------------------------------------------------------------------------------------------------------
+        // Solution 2
+
+        StringTokenizer st = new StringTokenizer(s, " ");
+        List<String> list = new ArrayList<>();
+
+        while (st.hasMoreTokens()) {
+            list.add(st.nextToken());
         }
-        bw.write(String.valueOf(result));
-        //return result;
+
+        bw.write((list.get(list.size() - 1)).length());
+        //return (list.get(list.size() - 1)).length();
 
         //--------------------------------------------------------------------------------------------------------------
 
