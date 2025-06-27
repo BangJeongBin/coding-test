@@ -3,26 +3,44 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2300-2399/2311.Longest%20Binary%20Subsequence%20Less%20Than%20or%20Equal%20to%20K/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2000-2099/2014.Longest%20Subsequence%20Repeated%20k%20Times/Solution.java
 public class Main {
+    private char[] s;
 
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        String s = "1001010";
-        int k = 5;
+        String s = "letsleetcode";
+        int k = 2;
+
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int ans = 0, v = 0;
-        for (int i = s.length() - 1; i >= 0; --i) {
-            if (s.charAt(i) == '0') {
-                ++ans;
-            } else if (ans < 30 && (v | 1 << ans) <= k) {
-                v |= 1 << ans;
-                ++ans;
+        this.s = s.toCharArray();
+        int[] cnt = new int[26];
+        for (char c : this.s) {
+            cnt[c - 'a']++;
+        }
+
+        List<Character> cs = new ArrayList<>();
+        for (char c = 'a'; c <= 'z'; ++c) {
+            if (cnt[c - 'a'] >= k) {
+                cs.add(c);
+            }
+        }
+        Deque<String> q = new ArrayDeque<>();
+        q.offer("");
+        String ans = "";
+        while (!q.isEmpty()) {
+            String cur = q.poll();
+            for (char c : cs) {
+                String nxt = cur + c;
+                if (check(nxt, k)) {
+                    ans = nxt;
+                    q.offer(nxt);
+                }
             }
         }
         //return ans;
@@ -32,6 +50,22 @@ public class Main {
         bw.flush();
         bw.close();
         br.close();
+    }
+
+    private boolean check(String t, int k) {
+        int i = 0;
+        for (char c : s) {
+            if (c == t.charAt(i)) {
+                i++;
+                if (i == t.length()) {
+                    if (--k == 0) {
+                        return true;
+                    }
+                    i = 0;
+                }
+            }
+        }
+        return false;
     }
 
 
