@@ -3,45 +3,28 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2000-2099/2014.Longest%20Subsequence%20Repeated%20k%20Times/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2000-2099/2099.Find%20Subsequence%20of%20Length%20K%20With%20the%20Largest%20Sum/Solution.java
 public class Main {
-    private char[] s;
 
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        String s = "letsleetcode";
+        int[] nums = {2,1,3,3};
         int k = 2;
 
 
         //--------------------------------------------------------------------------------------------------------------
 
-        this.s = s.toCharArray();
-        int[] cnt = new int[26];
-        for (char c : this.s) {
-            cnt[c - 'a']++;
-        }
-
-        List<Character> cs = new ArrayList<>();
-        for (char c = 'a'; c <= 'z'; ++c) {
-            if (cnt[c - 'a'] >= k) {
-                cs.add(c);
-            }
-        }
-        Deque<String> q = new ArrayDeque<>();
-        q.offer("");
-        String ans = "";
-        while (!q.isEmpty()) {
-            String cur = q.poll();
-            for (char c : cs) {
-                String nxt = cur + c;
-                if (check(nxt, k)) {
-                    ans = nxt;
-                    q.offer(nxt);
-                }
-            }
+        int n = nums.length;
+        Integer[] idx = new Integer[n];
+        Arrays.setAll(idx, i -> i);
+        Arrays.sort(idx, (i, j) -> nums[i] - nums[j]);
+        Arrays.sort(idx, n - k, n);
+        int[] ans = new int[k];
+        for (int i = n - k; i < n; ++i) {
+            ans[i - (n - k)] = nums[idx[i]];
         }
         //return ans;
 
@@ -50,22 +33,6 @@ public class Main {
         bw.flush();
         bw.close();
         br.close();
-    }
-
-    private boolean check(String t, int k) {
-        int i = 0;
-        for (char c : s) {
-            if (c == t.charAt(i)) {
-                i++;
-                if (i == t.length()) {
-                    if (--k == 0) {
-                        return true;
-                    }
-                    i = 0;
-                }
-            }
-        }
-        return false;
     }
 
 
