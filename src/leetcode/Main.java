@@ -3,7 +3,7 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2000-2099/2099.Find%20Subsequence%20of%20Length%20K%20With%20the%20Largest%20Sum/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0069.Sqrt(x)/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
@@ -11,22 +11,21 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int[] nums = {2,1,3,3};
-        int k = 2;
-
+        int x = 2;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int n = nums.length;
-        Integer[] idx = new Integer[n];
-        Arrays.setAll(idx, i -> i);
-        Arrays.sort(idx, (i, j) -> nums[i] - nums[j]);
-        Arrays.sort(idx, n - k, n);
-        int[] ans = new int[k];
-        for (int i = n - k; i < n; ++i) {
-            ans[i - (n - k)] = nums[idx[i]];
+        int l = 0, r = x;
+        while (l < r) {
+            int mid = (l + r + 1) >>> 1;
+            if (mid > x / mid) {
+                r = mid - 1;
+            } else {
+                l = mid;
+            }
         }
-        //return ans;
+        System.out.println(x);
+        //return l;
 
         //--------------------------------------------------------------------------------------------------------------
 
