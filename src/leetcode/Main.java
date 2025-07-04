@@ -3,7 +3,7 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/3300-3399/3304.Find%20the%20K-th%20Character%20in%20String%20Game%20I/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/3300-3399/3307.Find%20the%20K-th%20Character%20in%20String%20Game%20II/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
@@ -12,18 +12,26 @@ public class Main {
 
         // Testcase
         int k = 5;
+        int[] operations = {0, 0, 0};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        List<Integer> word = new ArrayList<>();
-        word.add(0);
-        while (word.size() < k) {
-            for (int i = 0, m = word.size(); i < m; ++i) {
-                word.add((word.get(i) + 1) % 26);
-            }
+        long n = 1;
+        int i = 0;
+        while (n < k) {
+            n *= 2;
+            ++i;
         }
-        System.out.println((char) ('a' + word.get(k - 1)));
-        //return (char) ('a' + word.get(k - 1));
+        int d = 0;
+        while (n > 1) {
+            if (k > n / 2) {
+                k -= n / 2;
+                d += operations[i - 1];
+            }
+            n /= 2;
+            --i;
+        }
+        //return (char) ('a' + (d % 26));
 
         //--------------------------------------------------------------------------------------------------------------
 
