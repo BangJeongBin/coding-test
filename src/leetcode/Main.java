@@ -3,7 +3,7 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://leetcode.com/problems/maximum-matching-of-players-with-trainers/description/?envType=daily-question&envId=2025-07-13
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/1200-1299/1290.Convert%20Binary%20Number%20in%20a%20Linked%20List%20to%20Integer/Solution.java
 public class Main {
 
     private int[][] events;
@@ -15,23 +15,26 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int[] players = {4,7,9};
-        int[] trainers = {8,2,5,9};
+        //ListNode head = {1, 0, 1};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        Arrays.sort(players);
-        Arrays.sort(trainers);
-        int m = players.length, n = trainers.length;
-        for (int i = 0, j = 0; i < m; ++i, ++j) {
-            while (j < n && trainers[j] < players[i]) {
-                ++j;
-            }
-            if (j == n) {
-                //return i;
-            }
+        /**
+         * Definition for singly-linked list.
+         * public class ListNode {
+         *     int val;
+         *     ListNode next;
+         *     ListNode() {}
+         *     ListNode(int val) { this.val = val; }
+         *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+         * }
+         */
+
+        int ans = 0;
+        for (; head != null; head = head.next) {
+            ans = ans << 1 | head.val;
         }
-        //return m;
+        //return ans;
 
         //--------------------------------------------------------------------------------------------------------------
 
