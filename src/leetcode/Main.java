@@ -3,7 +3,7 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0070.Climbing%20Stairs/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0083.Remove%20Duplicates%20from%20Sorted%20List/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
@@ -11,17 +11,20 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int n = 3;
+        //ListNode head = {1, 1, 2};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int a = 0, b = 1;
-        for (int i = 0; i < n; ++i) {
-            int c = a + b;
-            a = b;
-            b = c;
-        }
-        //return b;
+        // ListNode 라는 가상의 자료구조를 사용하는 문제
+//        ListNode cur = head;
+//        while (cur != null && cur.next != null) {
+//            if (cur.val == cur.next.val) {
+//                cur.next = cur.next.next;
+//            } else {
+//                cur = cur.next;
+//            }
+//        }
+//        return head;
 
         //--------------------------------------------------------------------------------------------------------------
 
