@@ -3,7 +3,7 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 :
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0094.Binary%20Tree%20Inorder%20Traversal/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
@@ -11,38 +11,26 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int[] nums1 = {-1,0,0,3,3,3,0,0,0}; // nums1의 길이는 (m + n)
-        int m = 6;
-        int[] nums2 = {1,2,2};
-        int n = 3;
+        List<Integer> root =new ArrayList<>();
+        root.addAll(Arrays.asList(1,null,2,3));
+
+        //private List<Integer> ans = new ArrayList<>();
 
         //--------------------------------------------------------------------------------------------------------------
 
-        List list = new ArrayList();
-
-        for (int i = 0; i < m; i++) {
-            list.add(nums1[i]);
-        }
-        for (int i = 0; i < n; i++) {
-            list.add(nums2[i]);
-        }
-
-        for (Object i : list) {
-            System.out.println("before sort : " + i);
-        }
-        Collections.sort(list);
-
-        for (Object i : list) {
-            System.out.println("after sort : " + i);
-        }
-
-        for (int i = 0; i < list.size(); i++) {
-            nums1[i] = (int)list.get(i);
-        }
-
-        for (int i : nums1) {
-            System.out.println(i);
-        }
+//        public List<Integer> inorderTraversal(TreeNode root) {
+//            dfs(root);
+//            return ans;
+//        }
+//
+//        private void dfs(TreeNode root) {
+//            if (root == null) {
+//                return;
+//            }
+//            dfs(root.left);
+//            ans.add(root.val);
+//            dfs(root.right);
+//        }
 
         //--------------------------------------------------------------------------------------------------------------
 
