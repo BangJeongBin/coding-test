@@ -3,34 +3,38 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0094.Binary%20Tree%20Inorder%20Traversal/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0100.Same%20Tree/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        // Testcase
-        List<Integer> root =new ArrayList<>();
-        root.addAll(Arrays.asList(1,null,2,3));
+        /**
+         * Definition for a binary tree node.
+         * public class TreeNode {
+         *     int val;
+         *     TreeNode left;
+         *     TreeNode right;
+         *     TreeNode() {}
+         *     TreeNode(int val) { this.val = val; }
+         *     TreeNode(int val, TreeNode left, TreeNode right) {
+         *         this.val = val;
+         *         this.left = left;
+         *         this.right = right;
+         *     }
+         * }
+         */
 
-        //private List<Integer> ans = new ArrayList<>();
+        // Testcase
+        //TreeNode p = {1,2,3};
+        //TreeNode q = {1,2,3};
 
         //--------------------------------------------------------------------------------------------------------------
 
-//        public List<Integer> inorderTraversal(TreeNode root) {
-//            dfs(root);
-//            return ans;
-//        }
-//
-//        private void dfs(TreeNode root) {
-//            if (root == null) {
-//                return;
-//            }
-//            dfs(root.left);
-//            ans.add(root.val);
-//            dfs(root.right);
-//        }
+//        if (p == q) return true;
+//        if (p == null || q == null || p.val != q.val) return false;
+//        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
 
         //--------------------------------------------------------------------------------------------------------------
 
