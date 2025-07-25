@@ -3,7 +3,7 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0100.Same%20Tree/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0101.Symmetric%20Tree/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
@@ -27,14 +27,11 @@ public class Main {
          */
 
         // Testcase
-        //TreeNode p = {1,2,3};
-        //TreeNode q = {1,2,3};
+        //TreeNode root = {1,2,2,3,4,4,3};
 
         //--------------------------------------------------------------------------------------------------------------
 
-//        if (p == q) return true;
-//        if (p == null || q == null || p.val != q.val) return false;
-//        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+        //return dfs(root.left, root.right);
 
         //--------------------------------------------------------------------------------------------------------------
 
@@ -42,6 +39,16 @@ public class Main {
         bw.close();
         br.close();
     }
+
+//    private boolean dfs(TreeNode root1, TreeNode root2) {
+//        if (root1 == root2) {
+//            return true;
+//        }
+//        if (root1 == null || root2 == null || root1.val != root2.val) {
+//            return false;
+//        }
+//        return dfs(root1.left, root2.right) && dfs(root1.right, root2.left);
+//    }
 
 
     public static void main(String[] args) throws IOException {
