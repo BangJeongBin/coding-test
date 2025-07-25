@@ -3,7 +3,7 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0101.Symmetric%20Tree/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0104.Maximum%20Depth%20of%20Binary%20Tree/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
@@ -27,11 +27,16 @@ public class Main {
          */
 
         // Testcase
-        //TreeNode root = {1,2,2,3,4,4,3};
+        //TreeNode root = {3,9,20,null,null,15,7};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        //return dfs(root.left, root.right);
+//        if (root == null) {
+//            return 0;
+//        }
+//        int l = maxDepth(root.left);
+//        int r = maxDepth(root.right);
+//        return 1 + Math.max(l, r);
 
         //--------------------------------------------------------------------------------------------------------------
 
@@ -39,16 +44,6 @@ public class Main {
         bw.close();
         br.close();
     }
-
-//    private boolean dfs(TreeNode root1, TreeNode root2) {
-//        if (root1 == root2) {
-//            return true;
-//        }
-//        if (root1 == null || root2 == null || root1.val != root2.val) {
-//            return false;
-//        }
-//        return dfs(root1.left, root2.right) && dfs(root1.right, root2.left);
-//    }
 
 
     public static void main(String[] args) throws IOException {
