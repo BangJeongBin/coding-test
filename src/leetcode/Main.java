@@ -3,7 +3,7 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0104.Maximum%20Depth%20of%20Binary%20Tree/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0108.Convert%20Sorted%20Array%20to%20Binary%20Search%20Tree/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
@@ -27,16 +27,12 @@ public class Main {
          */
 
         // Testcase
-        //TreeNode root = {3,9,20,null,null,15,7};
+        int[] nums = {-10, -3, 0, 5, 9};
 
         //--------------------------------------------------------------------------------------------------------------
 
-//        if (root == null) {
-//            return 0;
-//        }
-//        int l = maxDepth(root.left);
-//        int r = maxDepth(root.right);
-//        return 1 + Math.max(l, r);
+//        this.nums = nums;
+//        return dfs(0, nums.length - 1);
 
         //--------------------------------------------------------------------------------------------------------------
 
@@ -44,6 +40,14 @@ public class Main {
         bw.close();
         br.close();
     }
+
+//    private TreeNode dfs(int l, int r) {
+//        if (l > r) {
+//            return null;
+//        }
+//        int mid = (l + r) >> 1;
+//        return new TreeNode(nums[mid], dfs(l, mid - 1), dfs(mid + 1, r));
+//    }
 
 
     public static void main(String[] args) throws IOException {
