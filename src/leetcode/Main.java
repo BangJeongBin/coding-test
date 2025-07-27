@@ -27,20 +27,12 @@ public class Main {
          */
 
         // Testcase
-        //TreeNode root = {3,9,20,null,null,15,7};
+        //TreeNode root = {5,4,8,11,null,13,4,7,2,null,null,null,1};
+        int targetSum = 22;
 
         //--------------------------------------------------------------------------------------------------------------
 
-//        if (root == null) {
-//            return 0;
-//        }
-//        if (root.left == null) {
-//            return 1 + minDepth(root.right);
-//        }
-//        if (root.right == null) {
-//            return 1 + minDepth(root.left);
-//        }
-//        return 1 + Math.min(minDepth(root.left), minDepth(root.right));
+        //return dfs(root, targetSum);
 
         //--------------------------------------------------------------------------------------------------------------
 
@@ -48,6 +40,17 @@ public class Main {
         bw.close();
         br.close();
     }
+
+//    private boolean dfs(TreeNode root, int s) {
+//        if (root == null) {
+//            return false;
+//        }
+//        s -= root.val;
+//        if (root.left == null && root.right == null && s == 0) {
+//            return true;
+//        }
+//        return dfs(root.left, s) || dfs(root.right, s);
+//    }
 
 
     public static void main(String[] args) throws IOException {
