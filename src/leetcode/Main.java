@@ -3,7 +3,7 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 :
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2400-2499/2411.Smallest%20Subarrays%20With%20Maximum%20Bitwise%20OR/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
@@ -11,35 +11,26 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int numRows = 5;
+        int[] nums = {1, 0, 2, 1, 3};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int[][] triangle = new int[numRows][numRows]; // 실제 연산용 변수
-        List<List<Integer>> result = new ArrayList<>(); // 리턴용 변수
-
-        for (int i = 0; i < numRows; i++) {
-            triangle[i][0] = 1; // 초기값 지정
-            triangle[i][i] = 1; // ,,
-            for (int j = 1; j < i; j++) {
-                triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
-            }
-        }
-
-        for (int i = 0; i < numRows; i++) { // 2차원 배열을 2차원 리스트로 복사
-            List<Integer> row = new ArrayList<>();
-            for (int j = 0; j < triangle.length; j++) {
-
-                if (triangle[i][j] != 0) {
-                    row.add(triangle[i][j]);
-                } else {
-                    break;
+        int n = nums.length;
+        int[] ans = new int[n];
+        int[] f = new int[32];
+        Arrays.fill(f, -1);
+        for (int i = n - 1; i >= 0; --i) {
+            int t = 1;
+            for (int j = 0; j < 32; ++j) {
+                if (((nums[i] >> j) & 1) == 1) {
+                    f[j] = i;
+                } else if (f[j] != -1) {
+                    t = Math.max(t, f[j] - i + 1);
                 }
             }
-            result.add(row);
+            ans[i] = t;
         }
-
-        //return result;
+        //return ans;
 
         //--------------------------------------------------------------------------------------------------------------
 
