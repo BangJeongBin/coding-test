@@ -3,7 +3,7 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2400-2499/2419.Longest%20Subarray%20With%20Maximum%20Bitwise%20AND/Solution.java
+// 참조 :
 public class Main {
 
     public static void solution() throws IOException {
@@ -11,20 +11,34 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int[] nums = {1,2,3,3,2,2};
+        int rowIndex = 33;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int mx = Arrays.stream(nums).max().getAsInt();
-        int ans = 0, cnt = 0;
-        for (int x : nums) {
-            if (x == mx) {
-                ans = Math.max(ans, ++cnt);
-            } else {
-                cnt = 0;
+        int[][] triangle = new int[100][100]; // 실제 연산용 변수
+        List<Integer> result = new ArrayList<>(); // 리턴용 변수
+
+        for (int i = 0; i < (rowIndex + 1); i++) {
+            triangle[i][0] = 1; // 초기값 지정
+            triangle[i][i] = 1; // ,,
+            for (int j = 1; j < i; j++) {
+                triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
             }
         }
-        //return ans;
+
+        for (int i = 0; i < triangle.length; i++) { // rowIndex의 값 저장
+            if (i == rowIndex) {
+                for (int j = 0; j < (i + 1); j++) {
+                    result.add(triangle[i][j]);
+                }
+            }
+        }
+
+        for (Integer i : result) {
+            System.out.println(i);
+        }
+
+        //return result;
 
         //--------------------------------------------------------------------------------------------------------------
 
