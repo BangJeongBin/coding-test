@@ -7,44 +7,39 @@ import java.util.*;
 public class Main {
 
     public static void solution() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Testcase
-        int rowIndex = 33;
+        int[] prices = {3, 3};
+
+        //--------------------------------------------------------------------------------------------------------------
+        // Time Over
+
+//        int result = 0; // 결과 값 변수
+//        int minNum = 10000; // 최소값 저장 변수
+//        int index = 0; // 인덱스 저장 변수
+//
+//        for (int i = 0; i < prices.length; i++) {
+//            for (int j = (i + 1); j < prices.length; j++) {
+//                if ((prices[j] - prices[i]) > result) {
+//                    result = prices[j] - prices[i];
+//                }
+//            }
+//        }
+//
+//        System.out.println(result);
+//
+//        //return result;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int[][] triangle = new int[100][100]; // 실제 연산용 변수
-        List<Integer> result = new ArrayList<>(); // 리턴용 변수
-
-        for (int i = 0; i < (rowIndex + 1); i++) {
-            triangle[i][0] = 1; // 초기값 지정
-            triangle[i][i] = 1; // ,,
-            for (int j = 1; j < i; j++) {
-                triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
-            }
+        int ans = 0, mi = prices[0];
+        for (int v : prices) {
+            ans = Math.max(ans, v - mi);
+            mi = Math.min(mi, v);
         }
-
-        for (int i = 0; i < triangle.length; i++) { // rowIndex의 값 저장
-            if (i == rowIndex) {
-                for (int j = 0; j < (i + 1); j++) {
-                    result.add(triangle[i][j]);
-                }
-            }
-        }
-
-        for (Integer i : result) {
-            System.out.println(i);
-        }
-
-        //return result;
+        //return ans;
 
         //--------------------------------------------------------------------------------------------------------------
-
-        bw.flush();
-        bw.close();
-        br.close();
     }
 
 
