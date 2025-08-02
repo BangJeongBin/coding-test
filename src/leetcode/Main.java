@@ -3,43 +3,77 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0121.Best%20Time%20to%20Buy%20and%20Sell%20Stock/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0125.Valid%20Palindrome/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int[] prices = {3, 3};
+        String s = "A man, a plan, a canal: Panama";
 
         //--------------------------------------------------------------------------------------------------------------
-        // Time Over
+        // 정규표현식 필터링에서 막힘
 
-//        int result = 0; // 결과 값 변수
-//        int minNum = 10000; // 최소값 저장 변수
-//        int index = 0; // 인덱스 저장 변수
+//        boolean result = false; // 결과 값 변수
+//        String str = ""; // lowerCase 저장 변수
 //
-//        for (int i = 0; i < prices.length; i++) {
-//            for (int j = (i + 1); j < prices.length; j++) {
-//                if ((prices[j] - prices[i]) > result) {
-//                    result = prices[j] - prices[i];
-//                }
-//            }
+//        if (s.length() == 1) {
+//            //return true;
 //        }
 //
-//        System.out.println(result);
+//        for (char ch : s.toCharArray()) {
+//            if (ch == ' ' || ch == ':' || ch == ',' || ch == '.') {
+//                continue;
+//            }
+//            str += Character.toLowerCase(ch);
+//        }
 //
+//        if (str.length() == 1 || str.length() == 0) {
+//            //return true;
+//            System.out.println("dsfads");
+//        }
+//
+//        char[] palin = str.toCharArray();
+//        int i = 0;
+//        int k = (palin.length - 1);
+//
+//        for (int j = 0; j < (palin.length / 2); j++) {
+//                System.out.println("palin[i]" + palin[i] + ", palin[k] = " + palin[k]);
+//            if (palin[i++] == palin[k--]) {
+//                result = true;
+//            } else {
+//                result = false;
+//            }
+//        }
+//        System.out.println("result = " + result);
 //        //return result;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int ans = 0, mi = prices[0];
-        for (int v : prices) {
-            ans = Math.max(ans, v - mi);
-            mi = Math.min(mi, v);
+        int num = 1;
+        int i = 0, j = s.length() - 1;
+        while (i < j) {
+            System.out.print(num++ + "회 : ");
+            if (!Character.isLetterOrDigit(s.charAt(i))) {
+                ++i;
+                System.out.println("왼쪽이 문자나 숫자가 아닌경우 스킵");
+            } else if (!Character.isLetterOrDigit(s.charAt(j))) {
+                --j;
+                System.out.println("오른쪽이 문자나 숫자가 아닌경우 스킵");
+            } else if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) {
+                //return false;
+                System.out.println("회문이 아닌경우");
+                break;
+            } else {
+                ++i;
+                --j;
+                System.out.println("회문인 경우");
+            }
         }
-        //return ans;
+        //return true;
 
         //--------------------------------------------------------------------------------------------------------------
+
     }
 
 
