@@ -3,32 +3,38 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 :
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0141.Linked%20List%20Cycle/Solution2.java
 public class Main {
 
     public static void solution() throws IOException {
 
+        /**
+         * Definition for singly-linked list.
+         * class ListNode {
+         *     int val;
+         *     ListNode next;
+         *     ListNode(int x) {
+         *         val = x;
+         *         next = null;
+         *     }
+         * }
+         */
+
         // Testcase
-        int[] nums = {-336,513,-560,-481,-174,101,-997,40,-527,-784,-283,-336,513,-560,-481,-174,101,-997,40,-527,-784,-283,354};
+        //ListNode head = {3,2,0,-4};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        List<Integer> list = new ArrayList<>();
-
-        for (int i : nums) { // List로 변경 후 오름차순 정렬
-            list.add(i);
-        }
-        Collections.sort(list);
-
-        for (int i = 1; i < list.size(); i += 2) {
-            if (!list.get(i - 1).equals(list.get(i))) {
-                //return list.get(i - 1);
-                System.out.println("i = " + (i - 1));
-            }
-        }
-
-        //return list.get(list.size() - 1);
-        System.out.println(list.get(list.size() - 1)); // length가 1개 인 경우
+//        ListNode slow = head;
+//        ListNode fast = head;
+//        while (fast != null && fast.next != null) {
+//            slow = slow.next;
+//            fast = fast.next.next;
+//            if (slow == fast) {
+//                return true;
+//            }
+//        }
+//        return false;
 
         //--------------------------------------------------------------------------------------------------------------
 
