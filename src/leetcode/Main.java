@@ -8,41 +8,29 @@ public class Main {
     public static void solution() throws IOException {
 
         /**
-         * Definition for a binary tree node.
-         * public class TreeNode {
+         * Definition for singly-linked list.
+         * public class ListNode {
          *     int val;
-         *     TreeNode left;
-         *     TreeNode right;
-         *     TreeNode() {}
-         *     TreeNode(int val) { this.val = val; }
-         *     TreeNode(int val, TreeNode left, TreeNode right) {
-         *         this.val = val;
-         *         this.left = left;
-         *         this.right = right;
+         *     ListNode next;
+         *     ListNode(int x) {
+         *         val = x;
+         *         next = null;
          *     }
          * }
          */
 
         // Testcase
-        //ListNode root = {1, null, 2, 3};
+        //ListNode headA = {4,1,8,4,5};
+        //ListNode headB = {5,6,1,8,4,5};
 
         //--------------------------------------------------------------------------------------------------------------
 
-//        private List<Integer> ans = new ArrayList<>();
-//
-//        public List<Integer> postorderTraversal(TreeNode root) {
-//        dfs(root);
-//        return ans;
-//    }
-//
-//    private void dfs(TreeNode root) {
-//        if (root == null) {
-//            return;
+//        ListNode a = headA, b = headB;
+//        while (a != b) {
+//            a = a == null ? headB : a.next;
+//            b = b == null ? headA : b.next;
 //        }
-//        dfs(root.left);
-//        dfs(root.right);
-//        ans.add(root.val);
-//    }
+//        return a;
 
         //--------------------------------------------------------------------------------------------------------------
 
