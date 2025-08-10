@@ -2,17 +2,21 @@ package leetcode;
 
 import java.io.IOException;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0231.Power%20of%20Two/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0171.Excel%20Sheet%20Column%20Number/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int n = 1;
+        String columnTitle = "FXSHRXW";
 
         //--------------------------------------------------------------------------------------------------------------
 
-        //return n > 0 && (n & (n - 1)) == 0;
+        int ans = 0;
+        for (int i = 0; i < columnTitle.length(); ++i) {
+            ans = ans * 26 + (columnTitle.charAt(i) - 'A' + 1);
+        }
+        //return ans;
 
         //--------------------------------------------------------------------------------------------------------------
     }
