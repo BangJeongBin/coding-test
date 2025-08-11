@@ -2,19 +2,33 @@ package leetcode;
 
 import java.io.IOException;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0171.Excel%20Sheet%20Column%20Number/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2400-2499/2438.Range%20Product%20Queries%20of%20Powers/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        String columnTitle = "FXSHRXW";
+        int n = 15;
+        int[][] queries = {{0, 1}, {2, 2}, {0, 3}};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int ans = 0;
-        for (int i = 0; i < columnTitle.length(); ++i) {
-            ans = ans * 26 + (columnTitle.charAt(i) - 'A' + 1);
+        int[] powers = new int[Integer.bitCount(n)];
+        for (int i = 0; n > 0; ++i) {
+            int x = n & -n;
+            powers[i] = x;
+            n -= x;
+        }
+        int m = queries.length;
+        int[] ans = new int[m];
+        final int mod = (int) 1e9 + 7;
+        for (int i = 0; i < m; ++i) {
+            int l = queries[i][0], r = queries[i][1];
+            long x = 1;
+            for (int j = l; j <= r; ++j) {
+                x = x * powers[j] % mod;
+            }
+            ans[i] = (int) x;
         }
         //return ans;
 
