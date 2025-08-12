@@ -2,35 +2,30 @@ package leetcode;
 
 import java.io.IOException;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2400-2499/2438.Range%20Product%20Queries%20of%20Powers/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2700-2799/2787.Ways%20to%20Express%20an%20Integer%20as%20Sum%20of%20Powers/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int n = 15;
-        int[][] queries = {{0, 1}, {2, 2}, {0, 3}};
+        int n = 10;
+        int x = 2;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int[] powers = new int[Integer.bitCount(n)];
-        for (int i = 0; n > 0; ++i) {
-            int x = n & -n;
-            powers[i] = x;
-            n -= x;
-        }
-        int m = queries.length;
-        int[] ans = new int[m];
         final int mod = (int) 1e9 + 7;
-        for (int i = 0; i < m; ++i) {
-            int l = queries[i][0], r = queries[i][1];
-            long x = 1;
-            for (int j = l; j <= r; ++j) {
-                x = x * powers[j] % mod;
+        int[][] f = new int[n + 1][n + 1];
+        f[0][0] = 1;
+        for (int i = 1; i <= n; ++i) {
+            long k = (long) Math.pow(i, x);
+            for (int j = 0; j <= n; ++j) {
+                f[i][j] = f[i - 1][j];
+                if (k <= j) {
+                    f[i][j] = (f[i][j] + f[i - 1][j - (int) k]) % mod;
+                }
             }
-            ans[i] = (int) x;
         }
-        //return ans;
+        //return f[n][n];
 
         //--------------------------------------------------------------------------------------------------------------
     }
