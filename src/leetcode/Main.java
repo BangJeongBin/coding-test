@@ -2,23 +2,23 @@ package leetcode;
 
 import java.io.IOException;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0300-0399/0326.Power%20of%20Three/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2200-2299/2264.Largest%203-Same-Digit%20Number%20in%20String/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int n = 27;
+        String num = "6777133339";
 
         //--------------------------------------------------------------------------------------------------------------
 
-        while (n > 2) {
-            if (n % 3 != 0) {
-                //return false;
+        for (int i = 9; i >= 0; i--) {
+            String s = String.valueOf(i).repeat(3);
+            if (num.contains(s)) {
+                //return s;
             }
-            n /= 3;
         }
-        //return n == 1;
+        //return "";
 
         //--------------------------------------------------------------------------------------------------------------
     }
