@@ -2,26 +2,36 @@ package leetcode;
 
 import java.io.IOException;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2300-2399/2348.Number%20of%20Zero-Filled%20Subarrays/Solution.java
+// 참조 :
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int[] nums = {1, 3, 0, 0, 2, 0, 0, 4};
+
+        //Customers table:
+        //+----+-------+
+        //| id | name  |
+        //+----+-------+
+        //| 1  | Joe   |
+        //| 2  | Henry |
+        //| 3  | Sam   |
+        //| 4  | Max   |
+        //+----+-------+
+
+        //Orders table:
+        //+----+------------+
+        //| id | customerId |
+        //+----+------------+
+        //| 1  | 3          |
+        //| 2  | 1          |
+        //+----+------------+
 
         //--------------------------------------------------------------------------------------------------------------
 
-        long ans = 0;
-        int cnt = 0;
-        for (int x : nums) {
-            if (x == 0) {
-                ans += ++cnt;
-            } else {
-                cnt = 0;
-            }
-        }
-        //return ans;
+//        SELECT name AS Customers
+//        FROM Customers
+//        WHERE id NOT IN(SELECT customerId FROM Orders);
 
         //--------------------------------------------------------------------------------------------------------------
     }
