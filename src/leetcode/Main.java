@@ -2,22 +2,24 @@ package leetcode;
 
 import java.io.IOException;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0190.Reverse%20Bits/Solution.java
+// 참조 :
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int n = 43261596;
+        int n = 2147483645;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int ans = 0;
-        for (int i = 0; i < 32 && n != 0; ++i) {
-            ans |= (n & 1) << (31 - i);
-            n >>>= 1;
+        int result = 0; // 결과 값 변수
+
+        while (n > 0) {
+             result += n % 2;
+             n /= 2;
         }
-        //return ans;
+        //return result;
+        System.out.println("result : " + result);
 
         //--------------------------------------------------------------------------------------------------------------
     }
