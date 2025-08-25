@@ -2,24 +2,17 @@ package leetcode;
 
 import java.io.IOException;
 
-// 참조 :
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0193.Valid%20Phone%20Numbers/Solution.sh
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int n = 2147483645;
+
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int result = 0; // 결과 값 변수
-
-        while (n > 0) {
-             result += n % 2;
-             n /= 2;
-        }
-        //return result;
-        System.out.println("result : " + result);
+        //awk '/^([0-9]{3}-|\([0-9]{3}\) )[0-9]{3}-[0-9]{4}$/' file.txt
 
         //--------------------------------------------------------------------------------------------------------------
     }
