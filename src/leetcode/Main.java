@@ -2,7 +2,7 @@ package leetcode;
 
 import java.io.IOException;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0193.Valid%20Phone%20Numbers/Solution.sh
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0195.Tenth%20Line/Solution.sh
 public class Main {
 
     public static void solution() throws IOException {
@@ -12,7 +12,7 @@ public class Main {
 
         //--------------------------------------------------------------------------------------------------------------
 
-        //awk '/^([0-9]{3}-|\([0-9]{3}\) )[0-9]{3}-[0-9]{4}$/' file.txt
+        //sed -n 10p file.txt
 
         //--------------------------------------------------------------------------------------------------------------
     }
