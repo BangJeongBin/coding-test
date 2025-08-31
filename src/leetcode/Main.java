@@ -2,22 +2,30 @@ package leetcode;
 
 import java.io.IOException;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/3000-3099/3021.Alice%20and%20Bob%20Playing%20Flower%20Game/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0197.Rising%20Temperature/Solution.sql
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int n = 3;
-        int m = 2;
+
+        //Weather table:
+        //+----+------------+-------------+
+        //| id | recordDate | temperature |
+        //+----+------------+-------------+
+        //| 1  | 2015-01-01 | 10          |
+        //| 2  | 2015-01-02 | 25          |
+        //| 3  | 2015-01-03 | 20          |
+        //| 4  | 2015-01-04 | 30          |
+        //+----+------------+-------------+
 
         //--------------------------------------------------------------------------------------------------------------
 
-        long a1 = (n + 1) / 2;
-        long b1 = (m + 1) / 2;
-        long a2 = n / 2;
-        long b2 = m / 2;
-        //return a1 * b2 + a2 * b1;
+//        SELECT w1.id
+//                FROM
+//        Weather AS w1
+//        JOIN Weather AS w2
+//        ON DATEDIFF(w1.recordDate, w2.recordDate) = 1 AND w1.temperature > w2.temperature;
 
         //--------------------------------------------------------------------------------------------------------------
     }
