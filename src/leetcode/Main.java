@@ -3,28 +3,37 @@ package leetcode;
 import java.io.IOException;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0202.Happy%20Number/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0203.Remove%20Linked%20List%20Elements/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
+        /**
+         * Definition for singly-linked list.
+         * public class ListNode {
+         *     int val;
+         *     ListNode next;
+         *     ListNode() {}
+         *     ListNode(int val) { this.val = val; }
+         *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+         * }
+         */
+
         // Testcase
-        int n = 19;
+        //LinkNode head = [1,2,6,3,4,5,6];
+        int val = 6;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        Set<Integer> vis = new HashSet<>();
-        while (n != 1 && !vis.contains(n)) {
-            vis.add(n);
-            int x = 0;
-            while (n != 0) {
-                // 각 자리수만큼 계산
-                x += (n % 10) * (n % 10);
-                n /= 10;
-            }
-            n = x;
+        ListNode dummy = new ListNode(-1, head);
+        ListNode pre = dummy;
+        while (pre.next != null) {
+            if (pre.next.val != val)
+                pre = pre.next;
+            else
+                pre.next = pre.next.next;
         }
-        //return n == 1;
+        return dummy.next;
 
         //--------------------------------------------------------------------------------------------------------------
     }
