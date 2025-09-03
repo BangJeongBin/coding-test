@@ -3,37 +3,32 @@ package leetcode;
 import java.io.IOException;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0203.Remove%20Linked%20List%20Elements/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/3000-3099/3027.Find%20the%20Number%20of%20Ways%20to%20Place%20People%20II/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
-        /**
-         * Definition for singly-linked list.
-         * public class ListNode {
-         *     int val;
-         *     ListNode next;
-         *     ListNode() {}
-         *     ListNode(int val) { this.val = val; }
-         *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-         * }
-         */
-
         // Testcase
-        //LinkNode head = [1,2,6,3,4,5,6];
-        int val = 6;
+        int[][] points = {{1, 1}, {2, 2}, {3, 3}};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        ListNode dummy = new ListNode(-1, head);
-        ListNode pre = dummy;
-        while (pre.next != null) {
-            if (pre.next.val != val)
-                pre = pre.next;
-            else
-                pre.next = pre.next.next;
+        Arrays.sort(points, (a, b) -> a[0] == b[0] ? b[1] - a[1] : a[0] - b[0]);
+        int ans = 0;
+        int n = points.length;
+        final int inf = 1 << 30;
+        for (int i = 0; i < n; ++i) {
+            int y1 = points[i][1];
+            int maxY = -inf;
+            for (int j = i + 1; j < n; ++j) {
+                int y2 = points[j][1];
+                if (maxY < y2 && y2 <= y1) {
+                    maxY = y2;
+                    ++ans;
+                }
+            }
         }
-        return dummy.next;
+        //return ans;
 
         //--------------------------------------------------------------------------------------------------------------
     }
