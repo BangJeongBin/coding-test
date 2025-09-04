@@ -3,32 +3,32 @@ package leetcode;
 import java.io.IOException;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/3000-3099/3027.Find%20the%20Number%20of%20Ways%20to%20Place%20People%20II/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0205.Isomorphic%20Strings/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int[][] points = {{1, 1}, {2, 2}, {3, 3}};
+        String s = "egg";
+        String t = "add";
 
         //--------------------------------------------------------------------------------------------------------------
 
-        Arrays.sort(points, (a, b) -> a[0] == b[0] ? b[1] - a[1] : a[0] - b[0]);
-        int ans = 0;
-        int n = points.length;
-        final int inf = 1 << 30;
+        Map<Character, Character> d1 = new HashMap<>();
+        Map<Character, Character> d2 = new HashMap<>();
+        int n = s.length();
         for (int i = 0; i < n; ++i) {
-            int y1 = points[i][1];
-            int maxY = -inf;
-            for (int j = i + 1; j < n; ++j) {
-                int y2 = points[j][1];
-                if (maxY < y2 && y2 <= y1) {
-                    maxY = y2;
-                    ++ans;
-                }
+            char a = s.charAt(i), b = t.charAt(i);
+            if (d1.containsKey(a) && d1.get(a) != b) {
+                //return false;
             }
+            if (d2.containsKey(b) && d2.get(b) != a) {
+                //return false;
+            }
+            d1.put(a, b);
+            d2.put(b, a);
         }
-        //return ans;
+        //return true;
 
         //--------------------------------------------------------------------------------------------------------------
     }
