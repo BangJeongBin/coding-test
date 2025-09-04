@@ -3,32 +3,36 @@ package leetcode;
 import java.io.IOException;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0205.Isomorphic%20Strings/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0206.Reverse%20Linked%20List/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
+        /**
+         * Definition for singly-linked list.
+         * public class ListNode {
+         *     int val;
+         *     ListNode next;
+         *     ListNode() {}
+         *     ListNode(int val) { this.val = val; }
+         *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+         * }
+         */
+
         // Testcase
-        String s = "egg";
-        String t = "add";
+        //ListNode head = {1,2,3,4,5};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        Map<Character, Character> d1 = new HashMap<>();
-        Map<Character, Character> d2 = new HashMap<>();
-        int n = s.length();
-        for (int i = 0; i < n; ++i) {
-            char a = s.charAt(i), b = t.charAt(i);
-            if (d1.containsKey(a) && d1.get(a) != b) {
-                //return false;
-            }
-            if (d2.containsKey(b) && d2.get(b) != a) {
-                //return false;
-            }
-            d1.put(a, b);
-            d2.put(b, a);
-        }
-        //return true;
+//        ListNode dummy = new ListNode();
+//        ListNode curr = head;
+//        while (curr != null) {
+//            ListNode next = curr.next;
+//            curr.next = dummy.next;
+//            dummy.next = curr;
+//            curr = next;
+//        }
+//        return dummy.next;
 
         //--------------------------------------------------------------------------------------------------------------
     }
