@@ -10,19 +10,21 @@ public class Main {
 
         // Testcase
         int[] nums = {1, 2, 3, 1};
+        int k = 3;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        Arrays.sort(nums); // 배열 정렬
+        Map<Integer, Integer> d = new HashMap<>();
 
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i - 1] == nums[i]) {
-                //return true;
-                System.out.println("true");
+        for (int i = 0; i < nums.length; ++i) {
+            // 이전에 같은 값이 있었는지 확인
+            if (i - d.getOrDefault(nums[i], -1000000) <= k) {
+                //return true; // 인덱스 차이가 k 이하면 바로 true
             }
+            // 현재 인덱스로 업데이트
+            d.put(nums[i], i);
         }
         //return false;
-        System.out.println("false");
 
         //--------------------------------------------------------------------------------------------------------------
     }
