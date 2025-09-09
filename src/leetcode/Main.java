@@ -3,25 +3,40 @@ package leetcode;
 import java.io.IOException;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/1300-1399/1317.Convert%20Integer%20to%20the%20Sum%20of%20Two%20No-Zero%20Integers/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0226.Invert%20Binary%20Tree/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
+        /**
+         * Definition for a binary tree node.
+         * public class TreeNode {
+         *     int val;
+         *     TreeNode left;
+         *     TreeNode right;
+         *     TreeNode() {}
+         *     TreeNode(int val) { this.val = val; }
+         *     TreeNode(int val, TreeNode left, TreeNode right) {
+         *         this.val = val;
+         *         this.left = left;
+         *         this.right = right;
+         *     }
+         * }
+         */
+
         // Testcase
-        int n = 1010;
+        //TreeNode root = [4,2,7,1,3,6,9];
 
         //--------------------------------------------------------------------------------------------------------------
 
-        for (int a = 1;; ++a) {
-            int b = n - a;
-
-            // 문자열로 바꿔서 "0"이 포함되어 있는지 확인
-            if (!(a + "" + b).contains("0")) {
-                //return new int[] {a, b};
-                System.out.println(a + ", " + b);
-            }
-        }
+//        if (root == null) {
+//            return null;
+//        }
+//        TreeNode l = invertTree(root.left);
+//        TreeNode r = invertTree(root.right);
+//        root.left = r;
+//        root.right = l;
+//        return root;
 
         //--------------------------------------------------------------------------------------------------------------
     }
