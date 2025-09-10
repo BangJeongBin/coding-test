@@ -3,7 +3,7 @@ package leetcode;
 import java.io.IOException;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0228.Summary%20Ranges/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0232.Implement%20Queue%20using%20Stacks/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
@@ -13,21 +13,46 @@ public class Main {
 
         //--------------------------------------------------------------------------------------------------------------
 
-//        public List<String> summaryRanges(int[] nums) {
-//            List<String> ans = new ArrayList<>();
-//            for (int i = 0, j, n = nums.length; i < n; i = j + 1) {
-//                j = i;
-//                while (j + 1 < n && nums[j + 1] == nums[j] + 1) {
-//                    ++j;
-//                }
-//                ans.add(f(nums, i, j));
-//            }
-//            return ans;
+//        private Deque<Integer> stk1 = new ArrayDeque<>();
+//        private Deque<Integer> stk2 = new ArrayDeque<>();
+//
+//        public MyQueue() {
 //        }
 //
-//        private String f(int[] nums, int i, int j) {
-//            return i == j ? nums[i] + "" : String.format("%d->%d", nums[i], nums[j]);
+//        public void push(int x) {
+//            stk1.push(x);
 //        }
+//
+//        public int pop() {
+//            move();
+//            return stk2.pop();
+//        }
+//
+//        public int peek() {
+//            move();
+//            return stk2.peek();
+//        }
+//
+//        public boolean empty() {
+//            return stk1.isEmpty() && stk2.isEmpty();
+//        }
+//
+//        private void move() {
+//            while (stk2.isEmpty()) {
+//                while (!stk1.isEmpty()) {
+//                    stk2.push(stk1.pop());
+//                }
+//            }
+//        }
+
+        /**
+         * Your MyQueue object will be instantiated and called as such:
+         * MyQueue obj = new MyQueue();
+         * obj.push(x);
+         * int param_2 = obj.pop();
+         * int param_3 = obj.peek();
+         * boolean param_4 = obj.empty();
+         */
 
         //--------------------------------------------------------------------------------------------------------------
     }
