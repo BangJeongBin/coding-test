@@ -3,56 +3,51 @@ package leetcode;
 import java.io.IOException;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0232.Implement%20Queue%20using%20Stacks/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0234.Palindrome%20Linked%20List/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
+        /**
+         * Definition for singly-linked list.
+         * public class ListNode {
+         *     int val;
+         *     ListNode next;
+         *     ListNode() {}
+         *     ListNode(int val) { this.val = val; }
+         *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+         * }
+         */
+
         // Testcase
-        int[] nums = {0,2,3,4,6,8,9};
+        //ListNode head = {1, 2, 2, 1};
 
         //--------------------------------------------------------------------------------------------------------------
 
-//        private Deque<Integer> stk1 = new ArrayDeque<>();
-//        private Deque<Integer> stk2 = new ArrayDeque<>();
-//
-//        public MyQueue() {
-//        }
-//
-//        public void push(int x) {
-//            stk1.push(x);
-//        }
-//
-//        public int pop() {
-//            move();
-//            return stk2.pop();
-//        }
-//
-//        public int peek() {
-//            move();
-//            return stk2.peek();
-//        }
-//
-//        public boolean empty() {
-//            return stk1.isEmpty() && stk2.isEmpty();
-//        }
-//
-//        private void move() {
-//            while (stk2.isEmpty()) {
-//                while (!stk1.isEmpty()) {
-//                    stk2.push(stk1.pop());
-//                }
+//        public boolean isPalindrome(ListNode head) {
+//            ListNode slow = head;
+//            ListNode fast = head.next;
+//            while (fast != null && fast.next != null) {
+//                slow = slow.next;
+//                fast = fast.next.next;
 //            }
-//        }
-
-        /**
-         * Your MyQueue object will be instantiated and called as such:
-         * MyQueue obj = new MyQueue();
-         * obj.push(x);
-         * int param_2 = obj.pop();
-         * int param_3 = obj.peek();
-         * boolean param_4 = obj.empty();
-         */
+//            ListNode cur = slow.next;
+//            slow.next = null;
+//            ListNode pre = null;
+//            while (cur != null) {
+//                ListNode t = cur.next;
+//                cur.next = pre;
+//                pre = cur;
+//                cur = t;
+//            }
+//            while (pre != null) {
+//                if (pre.val != head.val) {
+//                    return false;
+//                }
+//                pre = pre.next;
+//                head = head.next;
+//            }
+//            return true;
 
         //--------------------------------------------------------------------------------------------------------------
     }
