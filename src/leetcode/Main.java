@@ -3,51 +3,39 @@ package leetcode;
 import java.io.IOException;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0234.Palindrome%20Linked%20List/Solution.java
+// 참조 :
 public class Main {
 
     public static void solution() throws IOException {
 
-        /**
-         * Definition for singly-linked list.
-         * public class ListNode {
-         *     int val;
-         *     ListNode next;
-         *     ListNode() {}
-         *     ListNode(int val) { this.val = val; }
-         *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-         * }
-         */
-
         // Testcase
-        //ListNode head = {1, 2, 2, 1};
+        String s = "a";
+        String t = "ab";
 
         //--------------------------------------------------------------------------------------------------------------
 
-//        public boolean isPalindrome(ListNode head) {
-//            ListNode slow = head;
-//            ListNode fast = head.next;
-//            while (fast != null && fast.next != null) {
-//                slow = slow.next;
-//                fast = fast.next.next;
-//            }
-//            ListNode cur = slow.next;
-//            slow.next = null;
-//            ListNode pre = null;
-//            while (cur != null) {
-//                ListNode t = cur.next;
-//                cur.next = pre;
-//                pre = cur;
-//                cur = t;
-//            }
-//            while (pre != null) {
-//                if (pre.val != head.val) {
-//                    return false;
-//                }
-//                pre = pre.next;
-//                head = head.next;
-//            }
-//            return true;
+        if (s.length() != t.length()) {
+            //return false;
+        }
+
+        List<Character> listS = new ArrayList<>();
+        List<Character> listT = new ArrayList<>();
+
+        for (int i = 0; i < s.length(); i++) {
+             listS.add(s.charAt(i));
+             listT.add(t.charAt(i));
+        }
+
+        Collections.sort(listS);
+        Collections.sort(listT);
+
+        if (listS.equals(listT)) {
+            //return true;
+            System.out.println("true");
+        } else {
+            //return false;
+            System.out.println("false");
+        }
 
         //--------------------------------------------------------------------------------------------------------------
     }
