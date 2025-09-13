@@ -8,41 +8,47 @@ public class Main {
 
     public static void solution() throws IOException {
 
+        /**
+        * Definition for a binary tree node.
+        * public class TreeNode {
+        *     int val;
+        *     TreeNode left;
+        *     TreeNode right;
+        *     TreeNode() {}
+        *     TreeNode(int val) { this.val = val; }
+        *     TreeNode(int val, TreeNode left, TreeNode right) {
+        *         this.val = val;
+        *         this.left = left;
+        *         this.right = right;
+        *     }
+        * }
+        */
+
         // Testcase
-        String s = "a";
-        String t = "ab";
+        //TreeNode root = {,2,3,null,5};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        if (s.length() != t.length()) {
-            //return false;
-        }
-
-        List<Character> listS = new ArrayList<>();
-        List<Character> listT = new ArrayList<>();
-
-        for (int i = 0; i < s.length(); i++) {
-             listS.add(s.charAt(i));
-             listT.add(t.charAt(i));
-        }
-
-        Collections.sort(listS);
-        Collections.sort(listT);
-
-        if (listS.equals(listT)) {
-            //return true;
-            System.out.println("true");
-        } else {
-            //return false;
-            System.out.println("false");
-        }
-
-        //--------------------------------------------------------------------------------------------------------------
-    }
-
-
-    public static void main(String[] args) throws IOException {
-        solution();
-    }
+        // private List<String> ans = new ArrayList<>();
+        // private List<String> t = new ArrayList<>();
+        
+        // public List<String> binaryTreePaths(TreeNode root) {
+        //     dfs(root);
+        //     return ans;
+        // }
+        
+        // private void dfs(TreeNode root) {
+        //     if (root == null) {
+        //         return;
+        //     }
+        //     t.add(root.val + "");
+        //     if (root.left == null && root.right == null) {
+        //         ans.add(String.join("->", t));
+        //     } else {
+        //         dfs(root.left);
+        //         dfs(root.right);
+        //     }
+        //     t.remove(t.size() - 1);
+        // }
 }
 
