@@ -9,32 +9,22 @@ public class Main {
     public static void solution() throws IOException {
 
         // Testcase
-        String s = "a";
-        String t = "ab";
+        int num = 0;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        if (s.length() != t.length()) {
-            //return false;
-        }
+        while (true) {
+            String str = num + "";
 
-        List<Character> listS = new ArrayList<>();
-        List<Character> listT = new ArrayList<>();
-
-        for (int i = 0; i < s.length(); i++) {
-             listS.add(s.charAt(i));
-             listT.add(t.charAt(i));
-        }
-
-        Collections.sort(listS);
-        Collections.sort(listT);
-
-        if (listS.equals(listT)) {
-            //return true;
-            System.out.println("true");
-        } else {
-            //return false;
-            System.out.println("false");
+            if (str.length() == 1) {
+                //return num;
+                System.out.println("num ==> " + num);
+            } else {
+                num = 0;
+                for (char c : str.toCharArray()) {
+                    num += (c - '0');
+                }
+            }
         }
 
         //--------------------------------------------------------------------------------------------------------------
