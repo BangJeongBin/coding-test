@@ -3,40 +3,39 @@ package leetcode;
 import java.io.IOException;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2100-2199/2197.Replace%20Non-Coprime%20Numbers%20in%20Array/Solution.java
+// 참조 :
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int[] nums = {6, 4, 3, 2, 7, 6, 2};
+        int n = 50;
 
         //--------------------------------------------------------------------------------------------------------------
 
-//        public List<Integer> replaceNonCoprimes(int[] nums) {
-//            List<Integer> stk = new ArrayList<>();
-//            for (int x : nums) {
-//                stk.add(x);
-//                while (stk.size() > 1) {
-//                    x = stk.get(stk.size() - 1);
-//                    int y = stk.get(stk.size() - 2);
-//                    int g = gcd(x, y);
-//                    if (g == 1) {
-//                        break;
-//                    }
-//                    stk.remove(stk.size() - 1);
-//                    stk.set(stk.size() - 1, (int) ((long) x * y / g));
-//                }
-//            }
-//            return stk;
-//        }
-//
-//        private int gcd(int a, int b) {
-//            if (b == 0) {
-//                return a;
-//            }
-//            return gcd(b, a % b);
-//        }
+        if (n == 0) { // n이 0인 경우
+            //return false;
+            System.out.println("False => 0");
+        }
+
+        while (n != 1) {
+            if (n % 5 == 0) { // 제시된 수 중 가장 큰 수인 5부터 검증하여 else if 문 통과
+                n /= 5;
+                System.out.println("5 => " + n);
+            } else if (n % 3 == 0) {
+                n /= 3;
+                System.out.println("3 => " + n);
+            } else if (n % 2 == 0) {
+                n /= 2;
+                System.out.println("2 => " + n);
+            } else {
+                //return false;
+                System.out.println("False => " + n);
+                break;
+            }
+        }
+        //return true;
+        System.out.println("True");
 
         //--------------------------------------------------------------------------------------------------------------
     }
