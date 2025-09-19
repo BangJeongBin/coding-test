@@ -3,30 +3,26 @@ package leetcode;
 import java.io.IOException;
 import java.util.*;
 
-// 참조 :
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0278.First%20Bad%20Version/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int[] nums = {9,6,4,2,3,5,7,0,1};
+        int n = 5;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        List<Integer> list = new ArrayList<>();
-        for (int i : nums) {
-            list.add(i);
-        }
-        Collections.sort(list);
-
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) != i) {
-                //return i;
-                System.out.println("result ==> " + i);
-            }
-        }
-        //return list.size();
-        System.out.println("result ==> " + list.size());
+//        int l = 1, r = n;
+//        while (l < r) {
+//            int mid = (l + r) >>> 1;
+//            if (isBadVersion(mid)) {
+//                r = mid;
+//            } else {
+//                l = mid + 1;
+//            }
+//        }
+//        return l;
 
         //--------------------------------------------------------------------------------------------------------------
     }
