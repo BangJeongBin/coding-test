@@ -9,28 +9,35 @@ public class Main {
     public static void solution() throws IOException {
 
         // Testcase
-        int[] nums = {0, 1, 0, 3, 12};
+        String pattern = "abba";
+        String s = "dog cat cat fish";
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int k = 0, j = 1;
-        int[] arr = new int[nums.length]; // spare variable
+        Map<Character, String> map = new HashMap<>();
+        String[] str = s.split(" ");
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != 0) { // non-zero case
-                arr[k] = nums[i];
-                k++;
-            } else { // zero case
-                arr[nums.length - j] = nums[i];
-                j++;
-            }
+        if (pattern.length() != str.length) {
+            //return false;
+            System.out.println("false");
         }
 
-        for (int i = 0; i < arr.length; i++) {
-            nums[i] = arr[i];
+        for (int i = 0; i < pattern.length(); i++) {
+             if (!map.containsValue(str[i]) && !map.containsKey(pattern.charAt(i))) { // pattren이 등록되지 않은 경우
+                 map.put(pattern.charAt(i), str[i]);
+                 System.out.println("map put ==> " + pattern.charAt(i) + ", " + str[i]);
+             } else {                                   // pattren이 등록되어 있는 경우
+                 if (!map.containsKey(pattern.charAt(i))) { // s가 틀려서 pattern이 등록이 되지 않은 경우
+                     //return false;
+                     System.out.println("false");
+                 } else if (!map.get(pattern.charAt(i)).equals(str[i])) { // 등록된 pattern에 맞지 않는 경우
+                     //return false;
+                     System.out.println("false");
+                 }
+             }
         }
-
-        System.out.println(Arrays.toString(nums));
+        //return true;
+        System.out.println("true");
 
         //--------------------------------------------------------------------------------------------------------------
     }
