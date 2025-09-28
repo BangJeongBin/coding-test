@@ -3,24 +3,24 @@ package leetcode;
 import java.io.IOException;
 import java.util.*;
 
-// 참조 :
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0900-0999/0976.Largest%20Perimeter%20Triangle/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        char[] s = {'h', 'e', 'l', 'l', 'o'};
+        int[] nums = {2, 1, 2};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        List<Character> list = new ArrayList<>();
-        for (char c : s) {
-            list.add(c);
+        Arrays.sort(nums);
+        for (int i = nums.length - 1; i >= 2; --i) {
+            int c = nums[i - 1] + nums[i - 2];
+            if (c > nums[i]) {
+                //return c + nums[i];
+            }
         }
-        Collections.reverse(list);
-        for (int i = 0; i < list.size(); i++) {
-            s[i] = list.get(i);
-        }
+        //return 0;
 
         //--------------------------------------------------------------------------------------------------------------
     }
