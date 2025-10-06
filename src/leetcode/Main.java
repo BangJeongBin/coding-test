@@ -1,30 +1,50 @@
 package leetcode;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0011.Container%20With%20Most%20Water/Solution.java
+// 참조 :
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        int num = 64;
+        // 11 -> 6
+
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int l = 0, r = height.length - 1;
-        int ans = 0;
-        while (l < r) {
-            int t = Math.min(height[l], height[r]) * (r - l);
-            ans = Math.max(ans, t);
-            if (height[l] < height[r]) {
-                ++l;
-            } else {
-                --r;
+        for (int i = 0; i < num; i++) {
+            if ((i * i) == num) {
+                //return true;
+                System.out.println("i ==> " + i);
+                System.out.println("ture");
+            } else if ((i * i) > num) {
+                //return false;
+                System.out.println("false");
             }
         }
-        //return ans;
+        //return false;
+
+        //--------------------------------------------------------------------------------------------------------------
+        // 다른 풀이
+
+        long min = 1;
+        long max = num;
+        long mid = (max + min) / 2;
+        while (min <= max) {
+            mid = (max + min) / 2;
+            if (mid * mid == num) {
+                //return true;
+                System.out.println("true");
+            } else if (mid * mid > num) {
+                max = mid - 1;
+            } else {
+                min = mid + 1;
+            }
+        }
+        //return false;
 
         //--------------------------------------------------------------------------------------------------------------
     }
