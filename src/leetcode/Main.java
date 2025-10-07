@@ -3,48 +3,39 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 :
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/1400-1499/1488.Avoid%20Flood%20in%20The%20City/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int num = 64;
-        // 11 -> 6
-
+        int[] rains = {1, 2, 3, 4};
 
         //--------------------------------------------------------------------------------------------------------------
 
-        for (int i = 0; i < num; i++) {
-            if ((i * i) == num) {
-                //return true;
-                System.out.println("i ==> " + i);
-                System.out.println("ture");
-            } else if ((i * i) > num) {
-                //return false;
-                System.out.println("false");
-            }
-        }
-        //return false;
-
-        //--------------------------------------------------------------------------------------------------------------
-        // 다른 풀이
-
-        long min = 1;
-        long max = num;
-        long mid = (max + min) / 2;
-        while (min <= max) {
-            mid = (max + min) / 2;
-            if (mid * mid == num) {
-                //return true;
-                System.out.println("true");
-            } else if (mid * mid > num) {
-                max = mid - 1;
+        int n = rains.length;
+        int[] ans = new int[n];
+        Arrays.fill(ans, -1);
+        TreeSet<Integer> sunny = new TreeSet<>();
+        Map<Integer, Integer> rainy = new HashMap<>();
+        for (int i = 0; i < n; ++i) {
+            int v = rains[i];
+            if (v > 0) {
+                if (rainy.containsKey(v)) {
+                    Integer t = sunny.higher(rainy.get(v));
+                    if (t == null) {
+                        //return new int[0];
+                    }
+                    ans[t] = v;
+                    sunny.remove(t);
+                }
+                rainy.put(v, i);
             } else {
-                min = mid + 1;
+                sunny.add(i);
+                ans[i] = 1;
             }
         }
-        //return false;
+        //return ans;
 
         //--------------------------------------------------------------------------------------------------------------
     }
