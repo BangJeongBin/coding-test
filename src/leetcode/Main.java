@@ -9,21 +9,20 @@ public class Main {
     public static void solution() throws IOException {
 
         // Testcase
-        //List<Integer> nums = [2,5,7,8,9,2,3,4,3,1];
+        int[] nums = {1, -10, 7, 13, 6, 8};
+        int value = 5;
 
         //--------------------------------------------------------------------------------------------------------------
 
-//        int ans = 0, pre = 0, cur = 0;
-//        int n = nums.size();
-//        for (int i = 0; i < n; ++i) {
-//            ++cur;
-//            if (i == n - 1 || nums.get(i) >= nums.get(i + 1)) {
-//                ans = Math.max(ans, Math.max(cur / 2, Math.min(pre, cur)));
-//                pre = cur;
-//                cur = 0;
-//            }
-//        }
-//        return ans;
+        int[] cnt = new int[value];
+        for (int x : nums) {
+            ++cnt[(x % value + value) % value];
+        }
+        for (int i = 0;; ++i) {
+            if (cnt[i % value]-- == 0) {
+                //return i;
+            }
+        }
 
         //--------------------------------------------------------------------------------------------------------------
     }
