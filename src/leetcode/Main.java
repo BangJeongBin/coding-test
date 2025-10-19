@@ -3,29 +3,42 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/3300-3399/3397.Maximum%20Number%20of%20Distinct%20Elements%20After%20Operations/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/1600-1699/1625.Lexicographically%20Smallest%20String%20After%20Applying%20Operations/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int[] nums = {1, 2, 2, 3, 3, 4};
-        int k = 2;
+        String s = "5525";
+        int a = 9;
+        int b = 2;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        Arrays.sort(nums);
-        int n = nums.length;
-        int ans = 0, pre = Integer.MIN_VALUE;
-        for (int x : nums) {
-            int cur = Math.min(x + k, Math.max(x - k, pre + 1));
-            if (cur > pre) {
-                ++ans;
-                pre = cur;
+        Deque<String> q = new ArrayDeque<>();
+        q.offer(s);
+        Set<String> vis = new HashSet<>();
+        vis.add(s);
+        String ans = s;
+        int n = s.length();
+        while (!q.isEmpty()) {
+            s = q.poll();
+            if (ans.compareTo(s) > 0) {
+                ans = s;
+            }
+            char[] cs = s.toCharArray();
+            for (int i = 1; i < n; i += 2) {
+                cs[i] = (char) (((cs[i] - '0' + a) % 10) + '0');
+            }
+            String t1 = String.valueOf(cs);
+            String t2 = s.substring(n - b) + s.substring(0, n - b);
+            for (String t : List.of(t1, t2)) {
+                if (vis.add(t)) {
+                    q.offer(t);
+                }
             }
         }
         //return ans;
-        System.out.println(ans);
 
         //--------------------------------------------------------------------------------------------------------------
     }
