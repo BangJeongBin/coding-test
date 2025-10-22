@@ -3,25 +3,42 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0400-0499/0401.Binary%20Watch/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0400-0499/0404.Sum%20of%20Left%20Leaves/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int turnedOn = 1;
+        //TreeNode root = [3,9,20,null,null,15,7];
 
         //--------------------------------------------------------------------------------------------------------------
-
-        List<String> ans = new ArrayList<>();
-        for (int i = 0; i < 12; ++i) {
-            for (int j = 0; j < 60; ++j) {
-                if (Integer.bitCount(i) + Integer.bitCount(j) == turnedOn) {
-                    ans.add(String.format("%d:%02d", i, j));
-                }
-            }
-        }
-        //return ans;
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+//        if (root == null) {
+//            return 0;
+//        }
+//        int ans = sumOfLeftLeaves(root.right);
+//        if (root.left != null) {
+//            if (root.left.left == root.left.right) {
+//                ans += root.left.val;
+//            } else {
+//                ans += sumOfLeftLeaves(root.left);
+//            }
+//        }
+//        return ans;
 
         //--------------------------------------------------------------------------------------------------------------
     }
