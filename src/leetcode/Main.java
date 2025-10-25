@@ -3,30 +3,46 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0400-0499/0405.Convert%20a%20Number%20to%20Hexadecimal/Solution.java
+// 참조 :
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int num = 26;
+        int n = 20;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        if (num == 0) {
-            //return "0";
-        }
-        StringBuilder sb = new StringBuilder();
-        while (num != 0) {
-            int x = num & 15;
-            if (x < 10) {
-                sb.append(x);
-            } else {
-                sb.append((char) (x - 10 + 'a'));
+        int result = 0, k = 0;
+
+        for (int i = 0; i < 1000; i++) { // week count
+            for (int j = i + 1; j <= 7 + i; j++) { // day count
+                if (k == n) {
+                    System.out.println("result ==> " + result);
+                    //return result;
+                }
+                result += j;
+                System.out.println("result -> " + result + ", j -> " + j);
+                k++;
             }
-            num >>>= 4;
         }
-        //return sb.reverse().toString();
+        //return result;
+
+        //--------------------------------------------------------------------------------------------------------------
+        // Other Solution
+
+        int sum = 0; // result
+        int count = 1;
+        int c = 2;
+        for (int i = 1; i <= n; i++) {
+            sum += count;
+            count++;
+            if (i % 7 == 0) {
+                count = c;
+                c++;
+            }
+        }
+        //return sum;
 
         //--------------------------------------------------------------------------------------------------------------
     }
