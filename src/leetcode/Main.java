@@ -9,40 +9,21 @@ public class Main {
     public static void solution() throws IOException {
 
         // Testcase
-        int n = 20;
+        String s = "AAAAAA";
 
         //--------------------------------------------------------------------------------------------------------------
 
-        int result = 0, k = 0;
-
-        for (int i = 0; i < 1000; i++) { // week count
-            for (int j = i + 1; j <= 7 + i; j++) { // day count
-                if (k == n) {
-                    System.out.println("result ==> " + result);
-                    //return result;
-                }
-                result += j;
-                System.out.println("result -> " + result + ", j -> " + j);
-                k++;
-            }
+        int[] cnt = new int[128]; // ascii 코드 개수
+        int n = s.length();
+        for (int i = 0; i < n; ++i) {
+            ++cnt[s.charAt(i)];
         }
-        //return result;
-
-        //--------------------------------------------------------------------------------------------------------------
-        // Other Solution
-
-        int sum = 0; // result
-        int count = 1;
-        int c = 2;
-        for (int i = 1; i <= n; i++) {
-            sum += count;
-            count++;
-            if (i % 7 == 0) {
-                count = c;
-                c++;
-            }
+        int ans = 0;
+        for (int v : cnt) {
+            ans += v / 2 * 2; // 짝수인 경우만 필터
         }
-        //return sum;
+        ans += ans < n ? 1 : 0; // 결과값 홀수 만들기
+        //return ans;
 
         //--------------------------------------------------------------------------------------------------------------
     }
