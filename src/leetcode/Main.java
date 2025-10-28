@@ -3,40 +3,46 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0002.Add%20Two%20Numbers/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0003.Longest%20Substring%20Without%20Repeating%20Characters/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        //ListNode l1 = [2,4,3];
-        //ListNode l2 = [5,6,4];
+        String s = "dvdf";
 
         //--------------------------------------------------------------------------------------------------------------
 
-        /**
-         * Definition for singly-linked list.
-         * public class ListNode {
-         *     int val;
-         *     ListNode next;
-         *     ListNode() {}
-         *     ListNode(int val) { this.val = val; }
-         *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-         * }
-         */
+        int[] alpha = new int[128];
+        int result = 0;
+        int length = s.length();
 
-//        ListNode dummy = new ListNode(0);
-//        int carry = 0;
-//        ListNode cur = dummy;
-//        while (l1 != null || l2 != null || carry != 0) {
-//            int s = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + carry;
-//            carry = s / 10;
-//            cur.next = new ListNode(s % 10);
-//            cur = cur.next;
-//            l1 = l1 == null ? null : l1.next;
-//            l2 = l2 == null ? null : l2.next;
-//        }
-//        return dummy.next;
+        for (int i = 0, j = 0; j < length; j++) {
+            char c = s.charAt(j);
+            ++alpha[c];
+            while (alpha[c] > 1) {
+                --alpha[s.charAt(i++)];
+            }
+            result = Math.max(result, j - i + 1);
+        }
+        //return result;
+        System.out.println("result ==> " + result);
+
+        //--------------------------------------------------------------------------------------------------------------
+
+        HashSet<Character> hs = new HashSet<>();
+        int l = 0;
+        int maxlen = 0;
+        for (int r = 0; r < s.length(); r++) {
+            char ch = s.charAt(r);
+            while (hs.contains(ch)) {
+                hs.remove(s.charAt(l));
+                l++;
+            }
+            hs.add(ch);
+            maxlen = Math.max(maxlen, r - l + 1);
+        }
+        //return maxlen;
 
         //--------------------------------------------------------------------------------------------------------------
     }
