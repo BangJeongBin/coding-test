@@ -3,33 +3,40 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 :
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0002.Add%20Two%20Numbers/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int n = 15;
+        //ListNode l1 = [2,4,3];
+        //ListNode l2 = [5,6,4];
 
         //--------------------------------------------------------------------------------------------------------------
 
-        List<String> list = new ArrayList<>();
+        /**
+         * Definition for singly-linked list.
+         * public class ListNode {
+         *     int val;
+         *     ListNode next;
+         *     ListNode() {}
+         *     ListNode(int val) { this.val = val; }
+         *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+         * }
+         */
 
-        for (int i = 1; i <= n; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                list.add("FizzBuzz");
-            } else if (i % 3 == 0) {
-                list.add("Fizz");
-            } else if (i % 5 == 0) {
-                list.add("Buzz");
-            } else {
-                list.add("" + i);
-            }
-        }
-        //return list;
-        for (String s : list) {
-            System.out.println("s = " + s);
-        }
+//        ListNode dummy = new ListNode(0);
+//        int carry = 0;
+//        ListNode cur = dummy;
+//        while (l1 != null || l2 != null || carry != 0) {
+//            int s = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + carry;
+//            carry = s / 10;
+//            cur.next = new ListNode(s % 10);
+//            cur = cur.next;
+//            l1 = l1 == null ? null : l1.next;
+//            l2 = l2 == null ? null : l2.next;
+//        }
+//        return dummy.next;
 
         //--------------------------------------------------------------------------------------------------------------
     }
