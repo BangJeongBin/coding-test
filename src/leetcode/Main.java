@@ -3,28 +3,40 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/3300-3399/3354.Make%20Array%20Elements%20Equal%20to%20Zero/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/3200-3299/3217.Delete%20Nodes%20From%20Linked%20List%20Present%20in%20Array/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int[] nums = {1, 0, 2, 0, 3};
+        int[] nums = {1, 2, 3};
+        //ListNode head = [1,2,3,4,5];
 
         //--------------------------------------------------------------------------------------------------------------
+        /**
+         * Definition for singly-linked list.
+         * public class ListNode {
+         *     int val;
+         *     ListNode next;
+         *     ListNode() {}
+         *     ListNode(int val) { this.val = val; }
+         *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+         * }
+         */
 
-        int s = Arrays.stream(nums).sum();
-        int ans = 0, l = 0;
-        for (int x : nums) {
-            if (x != 0) {
-                l += x;
-            } else if (l * 2 == s) {
-                ans += 2;
-            } else if (Math.abs(l * 2 - s) <= 1) {
-                ++ans;
-            }
-        }
-        //return ans;
+//        Set<Integer> s = new HashSet<>();
+//        for (int x : nums) {
+//            s.add(x);
+//        }
+//        ListNode dummy = new ListNode(0, head);
+//        for (ListNode pre = dummy; pre.next != null;) {
+//            if (s.contains(pre.next.val)) {
+//                pre.next = pre.next.next;
+//            } else {
+//                pre = pre.next;
+//            }
+//        }
+//        return dummy.next;
 
         //--------------------------------------------------------------------------------------------------------------
     }
