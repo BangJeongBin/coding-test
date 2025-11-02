@@ -3,40 +3,48 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://github.com/doocs/leetcode/blob/main/solution/3200-3299/3217.Delete%20Nodes%20From%20Linked%20List%20Present%20in%20Array/Solution.java
+// 참조 : https://github.com/doocs/leetcode/blob/main/solution/2200-2299/2257.Count%20Unguarded%20Cells%20in%20the%20Grid/Solution.java
 public class Main {
 
     public static void solution() throws IOException {
 
         // Testcase
-        int[] nums = {1, 2, 3};
-        //ListNode head = [1,2,3,4,5];
+
 
         //--------------------------------------------------------------------------------------------------------------
-        /**
-         * Definition for singly-linked list.
-         * public class ListNode {
-         *     int val;
-         *     ListNode next;
-         *     ListNode() {}
-         *     ListNode(int val) { this.val = val; }
-         *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-         * }
-         */
 
-//        Set<Integer> s = new HashSet<>();
-//        for (int x : nums) {
-//            s.add(x);
-//        }
-//        ListNode dummy = new ListNode(0, head);
-//        for (ListNode pre = dummy; pre.next != null;) {
-//            if (s.contains(pre.next.val)) {
-//                pre.next = pre.next.next;
-//            } else {
-//                pre = pre.next;
+//        class Solution {
+//            public int countUnguarded(int m, int n, int[][] guards, int[][] walls) {
+//                int[][] g = new int[m][n];
+//                for (var e : guards) {
+//                    g[e[0]][e[1]] = 2;
+//                }
+//                for (var e : walls) {
+//                    g[e[0]][e[1]] = 2;
+//                }
+//                int[] dirs = {-1, 0, 1, 0, -1};
+//                for (var e : guards) {
+//                    for (int k = 0; k < 4; ++k) {
+//                        int x = e[0], y = e[1];
+//                        int a = dirs[k], b = dirs[k + 1];
+//                        while (x + a >= 0 && x + a < m && y + b >= 0 && y + b < n && g[x + a][y + b] < 2) {
+//                            x += a;
+//                            y += b;
+//                            g[x][y] = 1;
+//                        }
+//                    }
+//                }
+//                int ans = 0;
+//                for (var row : g) {
+//                    for (int v : row) {
+//                        if (v == 0) {
+//                            ++ans;
+//                        }
+//                    }
+//                }
+//                return ans;
 //            }
 //        }
-//        return dummy.next;
 
         //--------------------------------------------------------------------------------------------------------------
     }
