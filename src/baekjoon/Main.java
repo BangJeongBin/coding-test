@@ -3,17 +3,21 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://claude-u.tistory.com/432
+// 참조 : https://hooongs.tistory.com/232
 public class Main {
 
     public static void solution() throws IOException {
-//        L = int(input())
-//        string = input()
-//        answer = 0
+//    while True:
+//        n = input()
 //
-//        for i in range(L):
-//        answer += (ord(string[i])-96) * (31 ** i) #아스키 코드 값을 돌려주는 ord함수
-//        print(answer % 1234567891)
+//        if n == '0': # 종료
+//            break
+//
+//        if n == n[::-1]: # '1234' --> '4321'
+//            print('yes')
+//        else:
+//            print('no')
+
     }
 
 
