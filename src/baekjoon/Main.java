@@ -3,20 +3,19 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://hooongs.tistory.com/232
+// 참조 :
 public class Main {
 
     public static void solution() throws IOException {
-//    while True:
-//        n = input()
+//        n = int(input()) # 입력받을 점수의 개수
+//        case = list(map(int, input().split())) # 입력받은 점수 리스트
+//                m = max(case) # 최대값
+//                sumScore = 0 # 새로 계산한 점수의 값
 //
-//        if n == '0': # 종료
-//            break
+//        for i in case:
+//        sumScore += (i / m * 100)
 //
-//        if n == n[::-1]: # '1234' --> '4321'
-//            print('yes')
-//        else:
-//            print('no')
+//        print(sumScore / n)
 
     }
 
