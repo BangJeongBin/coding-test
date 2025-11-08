@@ -3,21 +3,18 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://ooyoung.tistory.com/89
+// 참조 : https://happyhyxndy.tistory.com/61
 public class Main {
 
     public static void solution() throws IOException {
 
-    //t = int(input())
-    //
-    //for _ in range(t):
-    //    floor = int(input())  # 층
-    //    num = int(input())  # 호
-    //    f0 = [x for x in range(1, num+1)]  # 0층 리스트
-    //    for k in range(floor):  # 층 수 만큼 반복
-    //        for i in range(1, num):  # 1 ~ n-1까지 (인덱스로 사용)
-    //            f0[i] += f0[i-1]  # 층별 각 호실의 사람 수를 변경
-    //    print(f0[-1])  # 가장 마지막 수 출력
+//        A, B, V = map(int, input().split())
+//
+//        x = (V - B) / (A - B)
+//        if x == int(x):
+//            print(int(x)) # 값이 정수인 경우
+//        else:
+//            print(int(x) + 1) # 값이 실수인 경우
 
     }
 
