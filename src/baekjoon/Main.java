@@ -3,28 +3,21 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://codespeed.tistory.com/465
+// 참조 : https://develop247.tistory.com/356
 public class Main {
 
     public static void solution() throws IOException {
 
-//        isbn = input()
-//        result = 0
-//        is_even = False
-//        for i in range(13):
-//            if isbn[i] == '*':
-//                if i % 2 != 0:
-//                    is_even = True
-//                continue
-//            result += int(isbn[i]) * (1 if i % 2 == 0 else 3)
+//            import sys
+//            import math
 //
-//        if is_even == True:
-//            for i in range(10):
-//                if (result + (i * 3)) % 10 == 0:
-//                    print(i)
-//                    break
-//        else:
-//            print(10 - result % 10)
+//            input = sys.stdin.readline
+//
+//            # 입력
+//            n, k = map(int, input().split())
+//
+//            # 이항계수 공식
+//            print(math.factorial(n) // (math.factorial(k) * math.factorial(n-k)))
 
     }
 
