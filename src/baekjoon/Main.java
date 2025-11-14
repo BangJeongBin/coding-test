@@ -12,24 +12,16 @@ public class Main {
 //
 //        input = sys.stdin.readline
 //
-//        result = 0
-//        n = []
+//        n = int(input())
 //
-//        for i in range(3):
-//            n.append(input())
+//        words = [str(input()) for i in range(n)]
 //
-//        for i in range(3):
-//            if 'z' not in n[i]: # 숫자인 경우
-//                result = int(n[i]) + (3 - i) # 출력할 숫자 할당
+//        words = list(set(words)) # 중복 제거
+//        words.sort() # 알파벳의 순서대로 정렬
+//        words.sort(key=len) # 단어의 길이대로 정렬
 //
-//        if result % 3 == 0 and result % 5 == 0:
-//            print('FizzBuzz')
-//        elif result % 5 == 0:
-//            print('Buzz')
-//        elif result % 3 == 0:
-//            print('Fizz')
-//        else:
-//            print(result)
+//        for i in words:
+//            print(i)
 
     }
 
