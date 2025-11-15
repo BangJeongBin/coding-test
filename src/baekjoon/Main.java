@@ -3,25 +3,40 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 :
+// 참조 : https://yoonsang-it.tistory.com/38
 public class Main {
 
     public static void solution() throws IOException {
 
 //        import sys
 //
-//        input = sys.stdin.readline
+//        m = int(sys.stdin.readline())
+//        S = set()
 //
-//        n = int(input())
+//        for _ in range(m):
+//            temp = sys.stdin.readline().strip().split()
 //
-//        words = [str(input()) for i in range(n)]
+//            if len(temp) == 1:
+//                if temp[0] == "all":
+//                    S = set([i for i in range(1, 21)])
+//                else:
+//                    S = set()
 //
-//        words = list(set(words)) # 중복 제거
-//        words.sort() # 알파벳의 순서대로 정렬
-//        words.sort(key=len) # 단어의 길이대로 정렬
+//            else:
+//                func, x = temp[0], temp[1]
+//                x = int(x)
 //
-//        for i in words:
-//            print(i)
+//                if func == "add":
+//                    S.add(x)
+//                elif func == "remove":
+//                    S.discard(x)
+//                elif func == "check":
+//                    print(1 if x in S else 0)
+//                elif func == "toggle":
+//                    if x in S:
+//                        S.discard(x)
+//                    else:
+//                        S.add(x)
 
     }
 
