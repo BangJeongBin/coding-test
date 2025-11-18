@@ -3,40 +3,30 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://yoonsang-it.tistory.com/38
+// 참조 : https://gudwns1243.tistory.com/63
 public class Main {
 
     public static void solution() throws IOException {
 
 //        import sys
 //
-//        m = int(sys.stdin.readline())
-//        S = set()
+//        input = sys.stdin.readline # 시간 단축을 위한 라이브러리
 //
-//        for _ in range(m):
-//            temp = sys.stdin.readline().strip().split()
+//        n, m = map(int, input().split())
 //
-//            if len(temp) == 1:
-//                if temp[0] == "all":
-//                    S = set([i for i in range(1, 21)])
-//                else:
-//                    S = set()
+//        dict = {}
 //
+//        for i in range(1, n + 1):
+//            a = input().rstrip() # readline 사용 시 시용하는 메서드
+//            dict[i] = a
+//            dict[a] = i
+//
+//        for i in range(m):
+//            quest = input().rstrip()
+//            if quest.isdigit():
+//                print(dict[int(quest)])
 //            else:
-//                func, x = temp[0], temp[1]
-//                x = int(x)
-//
-//                if func == "add":
-//                    S.add(x)
-//                elif func == "remove":
-//                    S.discard(x)
-//                elif func == "check":
-//                    print(1 if x in S else 0)
-//                elif func == "toggle":
-//                    if x in S:
-//                        S.discard(x)
-//                    else:
-//                        S.add(x)
+//                print(dict[quest])
 
     }
 
