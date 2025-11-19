@@ -3,30 +3,27 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://gudwns1243.tistory.com/63
+// 참조 :
 public class Main {
 
     public static void solution() throws IOException {
 
 //        import sys
 //
-//        input = sys.stdin.readline # 시간 단축을 위한 라이브러리
+//        input = sys.stdin.readline
 //
-//        n, m = map(int, input().split())
+//        n = int(input()) # 입력 값 변수
 //
-//        dict = {}
+//        cnt = 0 #
+//        result = 0
 //
-//        for i in range(1, n + 1):
-//            a = input().rstrip() # readline 사용 시 시용하는 메서드
-//            dict[i] = a
-//            dict[a] = i
-//
-//        for i in range(m):
-//            quest = input().rstrip()
-//            if quest.isdigit():
-//                print(dict[int(quest)])
-//            else:
-//                print(dict[quest])
+//        while True:
+//            cnt += 1
+//            if '666' in str(cnt): # 666이 포함된 경우
+//                result += 1
+//                if result == n:
+//                    print(cnt)
+//                    break
 
     }
 
