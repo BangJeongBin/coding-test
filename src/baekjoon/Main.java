@@ -3,19 +3,23 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://lucian-blog.tistory.com/84
+// 참조 :
 public class Main {
 
     public static void solution() throws IOException {
 
-//        n = int(input())
+//        import sys
 //
-//        cnt = 0
-//        while n > 0:
-//          cnt += n // 5 # // : 정수 몫
-//          n //= 5
+//        input = sys.stdin.readline
+//        result = []
 //
-//        print(cnt)
+//        for i in range(int(input())):
+//            result.append(int(input()))
+//
+//        result.sort()
+//
+//        for i in result:
+//            print(i)
 
     }
 
