@@ -3,27 +3,19 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 :
+// 참조 : https://lucian-blog.tistory.com/84
 public class Main {
 
     public static void solution() throws IOException {
 
-//        import sys
+//        n = int(input())
 //
-//        input = sys.stdin.readline
+//        cnt = 0
+//        while n > 0:
+//          cnt += n // 5 # // : 정수 몫
+//          n //= 5
 //
-//        n = int(input()) # 입력 값 변수
-//
-//        cnt = 0 #
-//        result = 0
-//
-//        while True:
-//            cnt += 1
-//            if '666' in str(cnt): # 666이 포함된 경우
-//                result += 1
-//                if result == n:
-//                    print(cnt)
-//                    break
+//        print(cnt)
 
     }
 
