@@ -3,25 +3,27 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://night-knight.tistory.com/entry/%EB%B0%B1%EC%A4%8010814Silver-4-%EB%82%98%EC%9D%B4%EC%88%9C-%EC%A0%95%EB%A0%AC-python
+// 참조 : https://auyeol-coding.tistory.com/62
 public class Main {
 
     public static void solution() throws IOException {
 
 //        import sys
 //
-//        input = sys.stdin.readline
+//        K = int(sys.stdin.readline())    # 첫 번째 줄에 정수 K가 주어진다.
 //
-//        n = int(input()) # 입력받을 테스트 개수
+//        ST = []             # 빈 스택 생성
+//        sum_v = 0           # 합을 구할 sum_v 변수 초기화
 //
-//        user = [] # 값을 담을 리스트
+//        for _ in range(K):  # K개의 줄에 정수가 1개씩 주어진다.
+//            num = int(sys.stdin.readline())  # 값 입력받기
 //
-//        for _ in range(n):
-//            age, name = input().split()
-//            user.append([int(age), name]) # [[1, 2], [3, 4]] 이렇게 들어감
+//            if ST and num == 0: # 스택에 값이 존재하고, 입력받은 값이 0이면
+//                ST.pop()        # 스택에서 pop()
+//            else:
+//                ST.append(num)  # 아닌경우 스택에 append()
 //
-//        for i in sorted(user, key = lambda x : x[0]): # 람다함수를 이용하여 [0]만 오름차순 진행
-//            print(i[0],i[1])
+//        print(sum(ST))          # 스택의 합을 출력
 
     }
 
