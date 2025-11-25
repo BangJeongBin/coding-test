@@ -3,20 +3,44 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://growth-coder.tistory.com/72#2.%20sys%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC%20input%20%EC%8B%9C%EA%B0%84%20%EC%A4%84%EC%9D%B4%EA%B8%B0-1-1
+// 참조 : https://mxxcode.tistory.com/84
 public class Main {
 
     public static void solution() throws IOException {
 
 //        import sys
-//        n=int(input())
-//        li=[]
-//        for i in range(n):
-//            a, b = map(int,sys.stdin.readline().split())
-//            li.append([a,b])
-//        li.sort(key=lambda x: (x[1], x[0]))
-//        for i in li:
-//            print(i[0], i[1])
+//        input = sys.stdin.readline
+//
+//        # 이분탐색 메서드
+//        def binary_search(target, nList):
+//            start = 0 # 증감값
+//            end = n - 1 # 고정값
+//
+//            while start <= end:
+//                mid = (start + end) // 2 # 중간값 설정
+//
+//                if nList[mid] == target:
+//                    return True
+//                elif nList[mid] < target:
+//                    start = mid + 1 # 왼쪽 구간을 버리고 오른쪽으로 이동
+//                else:
+//                    end = mid - 1 # 오른쪽 구간을 버리고 완쪽으로 이동
+//
+//            return False
+//
+//
+//        n = int(input()) # n값 할당
+//        nList = sorted(list(map(int, input().split()))) # n개의 리스트 초기화 - 정렬작업 진행
+//
+//        m = int(input()) # m값 할당
+//        mList = list(map(int, input().split())) # m개의 리스트 초기화
+//
+//        for i in mList:
+//            if binary_search(i, nList):
+//                print(1)
+//            else:
+//                print(0)
+
 
     }
 
