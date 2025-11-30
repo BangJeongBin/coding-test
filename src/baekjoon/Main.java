@@ -3,30 +3,31 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://omins.tistory.com/34
+// 참조 : https://divheer.tistory.com/363
 public class Main {
 
     public static void solution() throws IOException {
 
-//        t = int(input())
-//        for _ in range(t):
-//            stk = []
-//            s = input()
-//            isVPS = True
+//        import sys
+//        input = sys.stdin.readline
 //
-//            for ch in s:
-//                if ch == '(':
-//                    stk.append('(')
-//                if ch == ')':
-//                    if stk:
-//                        stk.pop()
-//                    elif not stk:
-//                        isVPS = False
-//                        break
-//            if not stk and isVPS:
-//                print('YES')
-//            elif stk or not isVPS:
-//                print('NO')
+//        n = int(input())
+//        my_list = map(int, input().split())
+//        m = int(input())
+//        card_list = map(int, input().split())
+//
+//        dic = {}
+//        for i in my_list:
+//            if i in dic:
+//                dic[i] += 1
+//            else:
+//                dic[i] = 1 # 해당 값 초기화
+//
+//        for i in card_list:
+//            if i in dic:
+//                print(dic[i], end=" ")
+//            else:
+//                print(0, end=" ")
 
     }
 
