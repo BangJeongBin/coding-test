@@ -3,33 +3,37 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://raon-2.tistory.com/4
+// 참조 : https://bambbang00.tistory.com/43
 public class Main {
 
     public static void solution() throws IOException {
 
-//        import sys
+//        N, M = map(int, input().split())
+//        original = []
+//        count = []
 //
-//        def roundUp(num): # 반올림을 하는 메서드 구현
-//            if(num - int(num)) >= 0.5:
-//                return int(num) + 1
-//            else:
-//                return int(num)
+//        for _ in range(N):
+//            original.append(input())
 //
-//        n = int(sys.stdin.readline().rstrip())
+//        for a in range(N-7):
+//            for b in range(M-7):
+//                index1 = 0
+//                index2 = 0
+//                for i in range(a, a+8):
+//                    for j in range(b, b+8):
+//                        if (i+j) % 2 == 0:
+//                            if original[i][j] != 'W':
+//                                index1 += 1
+//                            if original[i][j] != 'B':
+//                                index2 += 1
+//                        else:
+//                            if original[i][j] != 'B':
+//                                index1 += 1
+//                            if original[i][j] != 'W':
+//                                index2 += 1
+//                count.append(min(index1, index2))
 //
-//        if n == 0:
-//            print(0)
-//        else:
-//            arr = []
-//
-//            for i in range(n):
-//                arr.append(int(sys.stdin.readline().rstrip()))
-//
-//            arr.sort()
-//            border = roundUp(n * 0.15)
-//
-//            print(roundUp(sum(arr[border:n-border])/len(arr[border:n-border])))
+//        print(min(count))
 
     }
 
