@@ -3,37 +3,27 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://bambbang00.tistory.com/43
+// 참조 :
 public class Main {
 
     public static void solution() throws IOException {
 
-//        N, M = map(int, input().split())
-//        original = []
-//        count = []
+//        import sys
+//        input = sys.stdin.readline
 //
-//        for _ in range(N):
-//            original.append(input())
+//        m, n = map(int, input().split())
 //
-//        for a in range(N-7):
-//            for b in range(M-7):
-//                index1 = 0
-//                index2 = 0
-//                for i in range(a, a+8):
-//                    for j in range(b, b+8):
-//                        if (i+j) % 2 == 0:
-//                            if original[i][j] != 'W':
-//                                index1 += 1
-//                            if original[i][j] != 'B':
-//                                index2 += 1
-//                        else:
-//                            if original[i][j] != 'B':
-//                                index1 += 1
-//                            if original[i][j] != 'W':
-//                                index2 += 1
-//                count.append(min(index1, index2))
+//        def is_prime(x):
+//            if x < 2:
+//                return False
+//            for i in range(2, int(x**0.5) + 1): # int(x**0.5) --> x의 제곱근
+//                if x % i == 0:
+//                    return False
+//            return True
 //
-//        print(min(count))
+//        for i in range(m, n + 1):
+//            if is_prime(i):
+//                print(i)
 
     }
 
