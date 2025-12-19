@@ -3,35 +3,53 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-// 참조 : https://lemon27.tistory.com/56
+// 참조 : https://thisismi.tistory.com/entry/%EB%B0%B1%EC%A4%80-2108%EB%B2%88-%ED%86%B5%EA%B3%84%ED%95%99-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A0%95%EB%8B%B5-%EC%BD%94%EB%93%9C
 public class Main {
 
     public static void solution() throws IOException {
 
+//        import sys
+//
+//        input = sys.stdin.readline
+//
 //        n = int(input())
-//        stack = []
-//        answer = []
-//        flag = 0
-//        cur = 1
-//        for i in range(n):
-//            num = int(input())
-//            while cur <= num:       # 입력한 수를 만날 때 까지 오름차순으로 push
-//                stack.append(cur)
-//                answer.append("+")
-//                cur += 1
-//            # 입력한 수를 만나면 while문 탈출. 즉 cur = num일 때 까지 while문을 돌아 스택을 쌓는다.
+//        data = []
 //
-//            if stack[-1] == num:    # stack의 TOP이 입력한 숫자와 같다면
-//                stack.pop()         # 스택의 TOP을 꺼내 수열을 만들어 준다.
-//                answer.append("-")
-//            else:                   # stack의 TOP이 입력한 수가 아니면 주어진 스택을 만들 수 없다.
-//                print("NO")         # 왜냐하면 12345 처럼 오름차순으로 스택이 입력되는데
-//                flag = 1            # TOP이 num보다 크면 num은 TOP보다 더 아래에 쌓여있기 때문이다.
-//                break
+//        _sum = 0
+//        count = dict()
+//        for _ in range(n):
+//            x = int(input())
+//            data.append(x)
 //
-//        if flag == 0:
-//            for i in answer:
-//                print(i)
+//            _sum += x
+//
+//            if x not in count:
+//                count[x] = 1
+//            else:
+//                count[x] += 1
+//
+//        data.sort()
+//
+//        # 산술평균
+//        print(round(_sum/n))
+//
+//        # 중앙값
+//        print(data[n//2])
+//
+//        # 최빈값
+//        freq = max(count.values())
+//        numbers = []
+//        for key, value in count.items():
+//            if value == freq:
+//                numbers.append(key)
+//
+//        if len(numbers) == 1:
+//            print(numbers[0])
+//        else:
+//            print(sorted(numbers)[1])
+//
+//        # 범위
+//        print(data[-1] - data[0])
 
     }
 
